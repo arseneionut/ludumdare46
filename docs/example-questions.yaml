@@ -1,0 +1,52 @@
+metrics:
+  fun:
+    start: 50
+    min: 0
+    max: 100
+    min-action:
+      - game over
+    max-action:
+      - add token2
+      - fun = 50
+      - police += 10
+  police:
+    start: 50
+    min: 0
+    max: 100
+    min_action:
+      - >-
+        message Because the police have joined the party, the cartels have taken
+        over the city. Fun's over, you need to start trading some meth or you'll
+        be shot.
+    max_action:
+      - game over
+start-question: blabla1
+questions:
+  blabla1:
+    conditions:
+      - police > 80
+      - fun > 60
+      - token1 present
+      - token2 absent
+    text: >-
+      Some dude wants in. Seems to be nice, but a little high. Do you let him
+      in?
+    yes:
+      - fun += 15
+      - police += 10
+      - money -= 5
+      - add token1
+      - remove token2
+      - >- 
+        message This guy stirred up fun conversations and he seems to be 
+        very popular. Noise levels are also higher.
+    no:
+      - fun -= 10
+      - police -= 5
+      - money -= 5
+      - >-
+        message People are not very happy with how you handled this person.
+        He seemed nice.
+    next:
+      - 50% -> blabla2
+      - 25% -> blabla3
