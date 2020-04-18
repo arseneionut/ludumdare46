@@ -55,22 +55,25 @@ questions:
     text: >-
       Some dude wants in. Seems to be nice, but a little high. Do you let him
       in?
-    yes:
-      - fun += 15
-      - police += 10
-      - money -= 5
-      - add token1
-      - remove token2
-      - >- 
-        message This guy stirred up fun conversations and he seems to be 
-        very popular. Noise levels are also higher.
-    no:
-      - fun -= 10
-      - police -= 5
-      - money -= 5
-      - >-
-        message People are not very happy with how you handled this person.
-        He seemed nice.
+    choices:
+      - text: yes, please come in
+        actions:
+          - fun += 15
+          - police += 10
+          - money -= 5
+          - add token1
+          - remove token2
+          - >- 
+            message This guy stirred up fun conversations and he seems to be 
+            very popular. Noise levels are also higher.
+      - text: no stoners here
+        actions:
+          - fun -= 10
+          - police -= 5
+          - money -= 5
+          - >-
+            message People are not very happy with how you handled this person.
+            He seemed nice.
     next:
       - 50% -> blabla2
       - 25% -> blabla3
@@ -81,8 +84,9 @@ Subkeys:
  * `conditions`: list of conditions that need to be all true for the question to be
    selected by the engine (see the section about conditions for possible conditions),
  * `text`: text of the question,
- * `yes`: list of actions to be performed if the player chooses `yes`,
- * `no`: list of actions to be performed if the player chooses `no` and
+ * `choices`: list of choices, with two subfields:
+   * `text`: text of the choice/answer and
+   * `actions`: list of actions to be performed if the player chooses this answer/choice
  * `next`: list of next questions, with probabilities.
 
 See the corresponding sections in this documents for possible actions and conditions.
