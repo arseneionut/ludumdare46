@@ -15,9 +15,9 @@ class Metric:
 		self.name = name
 		value = definition.start
 		min_value = Utils.safe_get(definition, "min", -10000000)
-		max_value = Utils.safe_get(definition, "min", 10000000)
-		min_actions = Utils.safe_get(definition, "min-actions", [])
-		max_actions = Utils.safe_get(definition, "max-actions", [])
+		max_value = Utils.safe_get(definition, "max", 10000000)
+		min_actions = Utils.safe_get(definition, "min-action", [])
+		max_actions = Utils.safe_get(definition, "max-action", [])
 		clear()
 	
 	func clear():
@@ -155,7 +155,6 @@ func make_choice(choice_index):
 		metric.clear()
 	var question = get_question(_current_question_id)
 	var choice = question.choices[choice_index]
-	print(choice.to_string())
 	_current_messages = []
 	var actions = Utils.copy_array(choice.actions)
 	var i = 0

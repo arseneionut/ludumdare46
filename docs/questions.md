@@ -17,9 +17,9 @@ metrics:
     start: 50
     min: 0
     max: 100
-    min_action:
+    min-action:
       - game over
-    max_action:
+    max-action:
       - add token2
       - fun = 50
       - police += 10

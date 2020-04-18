@@ -50,7 +50,7 @@
 		  "text": "yes",
 		  "actions": [
 			"fun += 15",
-			"police += 10",
+			"police += 100",
 			"money -= 5",
 			"add token1",
 			"remove token2",
