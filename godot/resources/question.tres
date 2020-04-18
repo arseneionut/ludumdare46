@@ -17,10 +17,25 @@
 	  "start": 50,
 	  "min": 0,
 	  "max": 100,
-	  "min_action": [
-		"message Because the police have joined the party, the cartels have taken over the city. Fun's over, you need to start trading some meth or you'll be shot."
+	  "min-action": [
+		"message Because the police have joined the party, the cartels have taken over the city. Fun's over, you need to start trading some meth or you'll be shot.",
+		"game over"
 	  ],
-	  "max_action": [
+	  "max-action": [
+		"message You got arrested. Party over.",
+		"game over"
+	  ]
+	},
+	"money": {
+	  "start": 50,
+	  "min": 0,
+	  "max": 1000,
+	  "min-action": [
+		"message You're broke.",
+		"game over"
+	  ],
+	  "max-action": [
+		"message You skipped town with all the cash. Party over.",
 		"game over"
 	  ]
 	}
@@ -28,12 +43,7 @@
   "start-question": "blabla1",
   "questions": {
 	"blabla1": {
-	  "conditions": [
-		"police > 80",
-		"fun > 60",
-		"token1 present",
-		"token2 absent"
-	  ],
+	  "conditions": null,
 	  "text": "Some dude wants in. Seems to be nice, but a little high. Do you let him in?",
 	  "choices": [
 		{
@@ -44,7 +54,7 @@
 			"money -= 5",
 			"add token1",
 			"remove token2",
-			"message This guy stirred up fun conversations and he seems to be  very popular. Noise levels are also higher."
+			"message This guy stirred up fun conversations and he seems to be very popular. Noise levels are also higher."
 		  ]
 		},
 		{
@@ -61,6 +71,64 @@
 		"50% -> blabla2",
 		"25% -> blabla3"
 	  ]
+	},
+	"blabla2": {
+	  "conditions": [
+		"fun > 30",
+		"police < 80",
+		"token1 absent"
+	  ],
+	  "text": "blabla2",
+	  "choices": [
+		{
+		  "text": "yes",
+		  "actions": [
+			"fun += 15",
+			"police += 10",
+			"money -= 5",
+			"add token1",
+			"remove token2"
+		  ]
+		},
+		{
+		  "text": "no",
+		  "actions": [
+			"fun -= 10",
+			"police -= 5",
+			"money -= 5"
+		  ]
+		}
+	  ],
+	  "next": [
+		"50% -> blabla1"
+	  ]
+	},
+	"blabla3": {
+	  "conditions": null,
+	  "text": "blabla3",
+	  "choices": [
+		{
+		  "text": "yes",
+		  "actions": [
+			"fun += 15",
+			"police += 10",
+			"money -= 5",
+			"add token1",
+			"remove token2"
+		  ]
+		},
+		{
+		  "text": "no",
+		  "actions": [
+			"fun -= 10",
+			"police -= 5",
+			"money -= 5"
+		  ]
+		}
+	  ],
+	  "next": [
+		"50% -> blabla2"
+	  ]
 	}
   }
-} 
+}

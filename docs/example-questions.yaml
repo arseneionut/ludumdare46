@@ -13,12 +13,12 @@ metrics:
     start: 50
     min: 0
     max: 100
-    min_action:
+    min-action:
       - >-
         message Because the police have joined the party, the cartels have taken
         over the city. Fun's over, you need to start trading some meth or you'll
         be shot.
-    max_action:
+    max-action:
       - game over
 start-question: blabla1
 questions:

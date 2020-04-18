@@ -2,7 +2,7 @@
 
 We can have multiple files, they are read and the content is merged.
 
-Files are using the YAML format.
+Files are using the YAML format. All numerical values are integers.
 
 ## Top Level Fields
 
