@@ -161,8 +161,11 @@ func make_choice(choice_index):
 	while i < actions.size():
 		var action = actions[i]
 		_run_action(action, actions)
+		if _game_over:
+			break
 		i += 1
-	_choose_next_question()
+	if not _game_over:
+		_choose_next_question()
 
 func get_latest_messages():
 	return _current_messages
@@ -184,7 +187,7 @@ func _choose_next_question():
 	var random = Utils.rng.randf()
 	var selection = null
 	for n in explicit_next:
-		if n.probability < random:
+		if random < n.probability:
 			selection = n.id
 			break
 		else:
@@ -247,8 +250,13 @@ func _build_explicit_others(next):
 	for n in next:
 		next_dict[n.id] = 1
 	for question in _questions:
-		if _eval_conditions(question.conditions) and not next_dict.has(question.id):
-			result.append(question)			
+		if not _eval_conditions(question.conditions):
+			continue
+		if next_dict.has(question.id):
+			continue
+		if question.id == _current_question_id:
+			continue
+		result.append(question)
 	result.shuffle()
 	return result
 
