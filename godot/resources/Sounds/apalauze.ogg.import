@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/apalauze.ogg-03cf60f693070171057905796fe86394.oggstr"
+
+[deps]
+
+source_file="res://resources/Sounds/apalauze.ogg"
+dest_files=[ "res://.import/apalauze.ogg-03cf60f693070171057905796fe86394.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

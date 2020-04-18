@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/muzica_electronica_2_7M.ogg-a0c9db326373ba62d4e57f5a4b899f44.oggstr"
+
+[deps]
+
+source_file="res://resources/Sounds/muzica_electronica_2_7M.ogg"
+dest_files=[ "res://.import/muzica_electronica_2_7M.ogg-a0c9db326373ba62d4e57f5a4b899f44.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
