@@ -40,6 +40,7 @@ func _ready():
 	_TEST_metric_loop()
 	_TEST_next_selection_conditions()
 	_TEST_pool_selection_conditions()
+	_TEST_in_random_pool()
 	
 	_process_results()
 	Utils.rng = old_rng
@@ -50,7 +51,9 @@ func _TEST_basic():
 	_check_equal(3, _engine.get_character_names().size())
 	_check_equal(3, _engine.get_metric_names().size())
 	
-	_check_equal("santa", _engine.get_question("blabla1").character)
+	var question = _engine.get_question("blabla1")
+	_check_equal(true, question.in_random_pool)
+	_check_equal("santa", question.character)
 	_end_test()
 
 func _TEST_next_selection():
@@ -220,7 +223,16 @@ func _TEST_pool_selection_conditions():
 	_test_case("pool_selection_conditions")
 	_check_equal("test-1", _engine.get_current_question_id())
 	
-	_rng.setup(0.25)
+	_engine.make_choice(0)
+	_check_equal("test-2", _engine.get_current_question_id())
+	_check_equal(false, _engine.is_game_over())
+	
+	_end_test()
+
+func _TEST_in_random_pool():
+	_test_case("in_random_pool")
+	_check_equal("test-1", _engine.get_current_question_id())
+	
 	_engine.make_choice(0)
 	_check_equal("test-2", _engine.get_current_question_id())
 	_check_equal(false, _engine.is_game_over())

@@ -27,19 +27,11 @@
             "text": "Lorem test-1?",
             "choices": [
                 {
-                    "text": "yes"
+                    "text": "yes",
                 },
-                {
-                    "text": "no"
-                }
             ],
-            "next": [
-                "50% -> test-2",
-                "25% -> test-3"
-            ]
         },
         "test-2": {
-            "in-random-pool": false,
             "character": "santa",
             "text": "Lorem ipsum test-2"
         },
@@ -49,6 +41,22 @@
             "text": "Lorem ipsum test-2"
         },
         "test-4": {
+            "in-random-pool": false,
+            "character": "santa",
+            "text": "Lorem ipsum test-2"
+        },  
+        "test-5": {
+            "in-random-pool": false,
+            "character": "santa",
+            "text": "Lorem ipsum test-2"
+        },       
+        "test-6": {
+            "in-random-pool": false,
+            "character": "santa",
+            "text": "Lorem ipsum test-2"
+        },       
+        "test-7": {
+            "in-random-pool": false,
             "character": "santa",
             "text": "Lorem ipsum test-2"
         }        
