@@ -218,10 +218,10 @@ func _choose_next_question():
 			sum_of_explicit_next += n.probability
 		random *= sum_of_explicit_next
 	var selection = null
-	print("***** choose next question")
-	print("  choosing from next with random %f" % [random])
-	for n in explicit_next:
-		print("  %s" % n.to_string())
+#	print("***** choose next question")
+#	print("  choosing from next with random %f" % [random])
+#	for n in explicit_next:
+#		print("  %s" % n.to_string())
 	for n in explicit_next:
 		if random <= n.probability:
 			selection = n.id
@@ -229,18 +229,18 @@ func _choose_next_question():
 		else:
 			random -= n.probability
 	if selection == null:
-		print("  choosing from others")
-		for o in explicit_others:
-			print("    %s" % o.id)
+#		print("  choosing from others")
+#		for o in explicit_others:
+#			print("    %s" % o.id)
 		if explicit_others.size() > 0:
 			selection = explicit_others[0].id
-	else:
-		print("  chosen " + selection)
+#	else:
+#		print("  chosen " + selection)
 	if selection == null:
 		_current_messages.append("No more things to do!")
 		_game_over = true
 	else:
-		print("  chosen " + selection)
+#		print("  chosen " + selection)
 		_current_question_id = selection
 
 func _run_action(action, actions):

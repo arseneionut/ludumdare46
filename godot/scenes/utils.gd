@@ -9,6 +9,13 @@ func split_and_clean(the_string, separator):
 			filtered_bits.append(b2)
 	return filtered_bits
 
+func read_content(file_name):
+	var f = File.new()
+	f.open(file_name, File.READ)
+	var content = f.get_as_text()
+	f.close()
+	return content
+
 func copy_array(array):
 	var result = []
 	for elt in array:
