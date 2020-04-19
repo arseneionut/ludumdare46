@@ -28,38 +28,35 @@ func populate_question():
 		populate_current_question()
 
 func populate_game_over():
-	$CanvasLayer/Panel/icon.visible = false
-	$CanvasLayer/Panel/btn_choice_1.visible = false
-	$CanvasLayer/Panel/btn_choice_2.visible = false
-	$CanvasLayer/Panel/lbl_question.visible = true
-	$CanvasLayer/Panel/lbl_question.text = "GAME OVER"
-	$CanvasLayer/Panel/btn_choice_3.visible = true
-	$CanvasLayer/Panel/btn_choice_3.text = "Again!"
+	$party_viewer/card/btn_choice_1.visible = false
+	$party_viewer/card/btn_choice_2.visible = false
+	$party_viewer/card/lbl_question.visible = true
+	$party_viewer/card/lbl_question.text = "GAME OVER"
+	$party_viewer/card/btn_choice_3.visible = true
+	$party_viewer/card/btn_choice_3.text = "Again!"
 	state = 1
 
 func populate_messages():
-	$CanvasLayer/Panel/icon.visible = true
-	$CanvasLayer/Panel/btn_choice_1.visible = false
-	$CanvasLayer/Panel/btn_choice_2.visible = false
-	$CanvasLayer/Panel/lbl_question.visible = true
+	$party_viewer/card/btn_choice_1.visible = false
+	$party_viewer/card/btn_choice_2.visible = false
+	$party_viewer/card/lbl_question.visible = true
 	var messages = engine.get_latest_messages()
 	var text = PoolStringArray(messages).join("\n\n")
-	$CanvasLayer/Panel/lbl_question.text = text
-	$CanvasLayer/Panel/btn_choice_3.visible = true
-	$CanvasLayer/Panel/btn_choice_3.text = "Next"
+	$party_viewer/card/lbl_question.text = text
+	$party_viewer/card/btn_choice_3.visible = true
+	$party_viewer/card/btn_choice_3.text = "Next"
 
 func populate_current_question():
 	state = 0
 	var question = engine.get_question(engine.get_current_question_id())
-	$CanvasLayer/Panel/icon.visible = true
-	$CanvasLayer/Panel/btn_choice_1.visible = false
-	$CanvasLayer/Panel/btn_choice_2.visible = false
-	$CanvasLayer/Panel/btn_choice_3.visible = false
-	$CanvasLayer/Panel/lbl_question.visible = true
-	$CanvasLayer/Panel/lbl_question.text = question.text
+	$party_viewer/card/btn_choice_1.visible = false
+	$party_viewer/card/btn_choice_2.visible = false
+	$party_viewer/card/btn_choice_3.visible = false
+	$party_viewer/card/lbl_question.visible = true
+	$party_viewer/card/lbl_question.text = question.text
 	var i = 0
 	while i < question.choices.size() and i < 3:
-		var node = get_node("CanvasLayer/Panel/btn_choice_%d" % [i + 1])
+		var node = get_node("party_viewer/card/btn_choice_%d" % [i + 1])
 		node.visible = true
 		node.text = question.choices[i].text
 		i += 1
