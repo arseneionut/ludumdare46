@@ -68,7 +68,16 @@ class NextQuestion:
 	
 	func to_string():
 		return "%f -> %s" % [probability, id]
+
+class Character:
+	var id
+	var name
+	func _init(definition):
+		id = definition.id
+		name = Utils.safe_get(definition, "name", id)
 	
+	func to_string():
+		return "character '%s': %s" % [id, name]
 
 class Question:
 	var id
@@ -76,11 +85,15 @@ class Question:
 	var text
 	var choices
 	var next
+	var character
+	var in_random_pool
 
 	func _init(id, definition):
 		self.id = id
 		self.text = definition.text
 		self.conditions = Utils.safe_get(definition, "conditions", [])
+		self.character = Utils.safe_get(definition, "character", null)
+		self.in_random_pool = Utils.safe_get(definition, "in-random-pool", true)
 		choices = []
 		for c in Utils.safe_get(definition, "choices", []):
 			choices.append(Choice.new(c))
@@ -105,12 +118,16 @@ class Question:
 
 var _questions
 var _metrics
+var _characters
 var _current_question_id
 var _tokens
 var _current_messages
 var _game_over
 
 func _init(design):
+	_characters = []
+	for character in Utils.safe_get(design, "characters", []):
+		_characters.append(Character.new(character))
 	_metrics = []
 	for metric_name in design.metrics:
 		var metric = design.metrics[metric_name]
@@ -130,8 +147,17 @@ func get_metric_names():
 		result.append(metric.name)
 	return result
 
-func get_metric_value(metric_name):
-	return get_metric(metric_name).value
+func get_character_names():
+	var result = []
+	for ch in _characters:
+		result.append(ch.name)
+	return result
+
+func get_character(character_name):
+	for ch in _characters:
+		if ch.name == character_name:
+			return ch
+	return null
 
 func get_current_question_id():
 	return _current_question_id
@@ -250,6 +276,8 @@ func _build_explicit_others(next):
 	for n in next:
 		next_dict[n.id] = 1
 	for question in _questions:
+		if not question.in_random_pool:
+			continue
 		if not _eval_conditions(question.conditions):
 			continue
 		if next_dict.has(question.id):

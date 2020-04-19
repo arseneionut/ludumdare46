@@ -5,6 +5,7 @@ var engine
 var state
 
 func _ready():
+	tests()
 	initialize_engine()
 
 func initialize_engine():
@@ -86,9 +87,9 @@ func tests():
 	print(engine.get_question("blabla1").to_string())
 	engine.make_choice(0)
 	print(engine.get_metric_names())
-	print(engine.get_metric_value("fun"))
-	print(engine.get_metric_value("police"))
-	print(engine.get_metric_value("money"))
+	print(engine.get_metric("fun").value)
+	print(engine.get_metric("police").value)
+	print(engine.get_metric("money").value)
 	print(engine.is_game_over())
 	print(engine.get_latest_messages())
 	print(engine.get_present_tokens())

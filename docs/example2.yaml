@@ -1,3 +1,6 @@
+characters:
+  - id: santa
+    name: Santa Klaus
 metrics:
   fun:
     start: 50
