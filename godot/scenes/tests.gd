@@ -38,6 +38,8 @@ func _ready():
 	_TEST_metric_min()
 	_TEST_metric_max()
 	_TEST_metric_loop()
+	_TEST_next_selection_conditions()
+	_TEST_pool_selection_conditions()
 	
 	_process_results()
 	Utils.rng = old_rng
@@ -195,6 +197,34 @@ func _TEST_metric_loop():
 	_check_equal(1, messages.size())
 	_check_equal("You skipped town with all the cash.", messages[0])
 
+	_end_test()
+
+func _TEST_next_selection_conditions():
+	_test_case("next_selection_conditions")
+	_check_equal("test-1", _engine.get_current_question_id())
+	
+	_rng.setup(0.25)
+	_engine.make_choice(0)
+	_check_equal("test-3", _engine.get_current_question_id())
+	_check_equal(false, _engine.is_game_over())
+	
+	_reset()
+	_rng.setup(0.7)
+	_engine.make_choice(0)
+	_check_equal("test-4", _engine.get_current_question_id())
+	_check_equal(false, _engine.is_game_over())
+
+	_end_test()
+
+func _TEST_pool_selection_conditions():
+	_test_case("pool_selection_conditions")
+	_check_equal("test-1", _engine.get_current_question_id())
+	
+	_rng.setup(0.25)
+	_engine.make_choice(0)
+	_check_equal("test-2", _engine.get_current_question_id())
+	_check_equal(false, _engine.is_game_over())
+	
 	_end_test()
 
 func _test_case(test_name):
