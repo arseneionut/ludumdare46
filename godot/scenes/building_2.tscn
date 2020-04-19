@@ -9,3 +9,21 @@ script = ExtResource( 2 )
 [node name="background" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="explosions" type="Node2D" parent="."]
+
+[node name="pos_1" type="Position2D" parent="explosions"]
+position = Vector2( 139.962, 394.104 )
+
+[node name="pos_2" type="Position2D" parent="explosions"]
+position = Vector2( 633.513, 450.58 )
+
+[node name="pos_3" type="Position2D" parent="explosions"]
+position = Vector2( 449.352, 375.688 )
+
+[node name="pos_4" type="Position2D" parent="explosions"]
+position = Vector2( 344.994, 317.984 )
+
+[node name="timer_explosion" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="timer_explosion" to="." method="_on_timer_explosion_timeout"]

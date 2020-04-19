@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://scenes/building_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/building_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/graphics/Buildings/background.png" type="Texture" id=8]
-[ext_resource path="res://scenes/card.gd" type="Script" id=9]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,7 +31,6 @@ centered = false
 [node name="building_1" parent="party_viewer/buildings" instance=ExtResource( 7 )]
 
 [node name="card" parent="party_viewer" instance=ExtResource( 2 )]
-script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
