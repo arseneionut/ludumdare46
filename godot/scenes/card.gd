@@ -40,7 +40,10 @@ func populate_messages():
 	var text = PoolStringArray(messages).join("\n\n")
 	$lbl_question.text = text
 	$btn_choice_3.visible = true
-	$btn_choice_3.text = "Next"
+	if engine.is_game_over():
+		$btn_choice_3.text = "Game Over"
+	else:
+		$btn_choice_3.text = "Next"
 
 func populate_current_question():
 	emit_signal("new_card")
