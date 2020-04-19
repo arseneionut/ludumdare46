@@ -27,28 +27,23 @@
             "text": "Lorem test-1?",
             "choices": [
                 {
-                    "text": "yes"
-                },
-                {
                     "text": "no"
                 }
             ],
-            "next": [
-                "50% -> test-2",
-                "25% -> test-3"
-            ]
         },
         "test-2": {
+            "conditions": [
+                "money < 50"
+            ],
             "character": "santa",
             "text": "Lorem ipsum test-2"
         },
         "test-3": {
+            "conditions": [
+                "money <= 50"
+            ],
             "character": "santa",
             "text": "Lorem ipsum test-2"
         },
-        "test-4": {
-            "character": "santa",
-            "text": "Lorem ipsum test-2"
-        }        
     }
 }

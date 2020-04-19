@@ -27,28 +27,24 @@
             "text": "Lorem test-1?",
             "choices": [
                 {
-                    "text": "yes"
-                },
-                {
-                    "text": "no"
+                    "text": "no",
+                    "actions": [
+                        "add token-1"
+                    ]
                 }
-            ],
-            "next": [
-                "50% -> test-2",
-                "25% -> test-3"
             ]
         },
         "test-2": {
             "character": "santa",
-            "text": "Lorem ipsum test-2"
-        },
-        "test-3": {
-            "character": "santa",
-            "text": "Lorem ipsum test-2"
-        },
-        "test-4": {
-            "character": "santa",
-            "text": "Lorem ipsum test-2"
-        }        
+            "text": "Lorem ipsum test-2",
+            "choices": [
+                {
+                    "text": "no",
+                    "actions": [
+                        "remove token-1"
+                    ]
+                }
+            ]
+        }
     }
 }

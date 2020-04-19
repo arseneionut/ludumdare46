@@ -14,8 +14,8 @@ class Metric:
 	func _init(name, definition):
 		self.name = name
 		value = definition.start
-		min_value = Utils.safe_get(definition, "min", -10000000)
-		max_value = Utils.safe_get(definition, "max", 10000000)
+		min_value = int(Utils.safe_get(definition, "min", -10000000))
+		max_value = int(Utils.safe_get(definition, "max", 10000000))
 		min_actions = Utils.safe_get(definition, "min-action", [])
 		max_actions = Utils.safe_get(definition, "max-action", [])
 		clear()
@@ -267,7 +267,7 @@ func _run_action(action, actions):
 
 func _set_metric(metric_name, value, actions):
 	var metric = get_metric(metric_name)
-	metric.set_value(value, actions)
+	metric.set_value(int(value), actions)
 
 func _decrease_metric(metric_name, value, actions):
 	var metric = get_metric(metric_name)

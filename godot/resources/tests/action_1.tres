@@ -27,28 +27,22 @@
             "text": "Lorem test-1?",
             "choices": [
                 {
-                    "text": "yes"
+                    "text": "yes",
+                    "actions": [
+                        "game over"
+                    ]
                 },
                 {
-                    "text": "no"
+                    "text": "no",
+                    "actions": [
+                        "money += 10"
+                    ]
                 }
             ],
-            "next": [
-                "50% -> test-2",
-                "25% -> test-3"
-            ]
         },
         "test-2": {
             "character": "santa",
             "text": "Lorem ipsum test-2"
         },
-        "test-3": {
-            "character": "santa",
-            "text": "Lorem ipsum test-2"
-        },
-        "test-4": {
-            "character": "santa",
-            "text": "Lorem ipsum test-2"
-        }        
     }
 }
