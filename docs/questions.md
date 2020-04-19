@@ -6,6 +6,25 @@ Files are using the YAML format. All numerical values are integers.
 
 ## Top Level Fields
 
+### `characters`
+
+Each question can have an associated character. This is the list of
+available characters.
+
+Example:
+
+```
+characters:
+  - id: santa
+    name: Santa Klaus
+```
+
+Subkeys:
+ 
+ * `id`: the id of the character, this is used to reference the character 
+   in the question and
+ * `name`: this is the display name of the character.
+
 ### `metrics`
 
 Describes the metrics found in the game. Dictionary with an entry for each
@@ -52,6 +71,8 @@ questions:
       - fun > 60
       - token1 present
       - token2 absent
+    character: santa
+    in-random-pool: true
     text: >-
       Some dude wants in. Seems to be nice, but a little high. Do you let him
       in?
@@ -81,13 +102,15 @@ questions:
 
 Subkeys: 
 
- * `conditions`: list of conditions that need to be all true for the question to be
+ * `conditions`: optional, list of conditions that need to be all true for the question to be
    selected by the engine (see the section about conditions for possible conditions),
+ * `character`: ID of the character that is asking the question,
+ * `in-random-pool`: optional, by default true, if false this question is only reachable via `next`
  * `text`: text of the question,
  * `choices`: list of choices, with two subfields:
    * `text`: text of the choice/answer and
    * `actions`: list of actions to be performed if the player chooses this answer/choice
- * `next`: list of next questions, with probabilities.
+ * `next`: optional, list of next questions, with probabilities.
 
 See the corresponding sections in this documents for possible actions and conditions.
 
