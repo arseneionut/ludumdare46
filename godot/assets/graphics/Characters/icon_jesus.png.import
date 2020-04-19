@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/card_50cent.png-c9ef974548d4b75f378d61ae16cfb6bf.stex"
+path="res://.import/icon_jesus.png-cc15eb7fea434c87659b10eeaf4b5df8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Cards/card_50cent.png"
-dest_files=[ "res://.import/card_50cent.png-c9ef974548d4b75f378d61ae16cfb6bf.stex" ]
+source_file="res://assets/graphics/Characters/icon_jesus.png"
+dest_files=[ "res://.import/icon_jesus.png-cc15eb7fea434c87659b10eeaf4b5df8.stex" ]
 
 [params]
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/building.gd" type="Script" id=1]
+[ext_resource path="res://assets/graphics/Buildings/buildings_row1.png" type="Texture" id=2]
+
+[node name="building_1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="explosions" type="Node2D" parent="."]
+
+[node name="pos_1" type="Position2D" parent="explosions"]
+position = Vector2( 259.053, 448.124 )
+
+[node name="pos_2" type="Position2D" parent="explosions"]
+position = Vector2( 863.1, 478.818 )
+
+[node name="pos_3" type="Position2D" parent="explosions"]
+position = Vector2( 372.005, 434.619 )

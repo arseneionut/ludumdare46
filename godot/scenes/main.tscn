@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
-[ext_resource path="res://assets/graphics/Cards/card_50cent.png" type="Texture" id=2]
-[ext_resource path="res://assets/graphics/Buildings/buildings_row4.png" type="Texture" id=3]
-[ext_resource path="res://assets/graphics/Buildings/buildings_row2.png" type="Texture" id=4]
-[ext_resource path="res://assets/graphics/Buildings/buildings_row1.png" type="Texture" id=5]
-[ext_resource path="res://assets/graphics/Buildings/buildings_row5.png" type="Texture" id=6]
-[ext_resource path="res://assets/graphics/Buildings/buildings_row3.png" type="Texture" id=7]
+[ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/building_4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/building_3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/building_5.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/building_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/building_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/graphics/Buildings/background.png" type="Texture" id=8]
+[ext_resource path="res://scenes/card.gd" type="Script" id=9]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,67 +21,18 @@ centered = false
 
 [node name="buildings" type="Node2D" parent="party_viewer"]
 
-[node name="layer_5" type="Sprite" parent="party_viewer/buildings"]
-texture = ExtResource( 6 )
-centered = false
+[node name="building_5" parent="party_viewer/buildings" instance=ExtResource( 5 )]
 
-[node name="layer_4" type="Sprite" parent="party_viewer/buildings"]
-texture = ExtResource( 3 )
-centered = false
+[node name="building_4" parent="party_viewer/buildings" instance=ExtResource( 3 )]
 
-[node name="layer_3" type="Sprite" parent="party_viewer/buildings"]
-texture = ExtResource( 7 )
-centered = false
+[node name="building_3" parent="party_viewer/buildings" instance=ExtResource( 4 )]
 
-[node name="layer_2" type="Sprite" parent="party_viewer/buildings"]
-texture = ExtResource( 4 )
-centered = false
+[node name="building_2" parent="party_viewer/buildings" instance=ExtResource( 6 )]
 
-[node name="layer_1" type="Sprite" parent="party_viewer/buildings"]
-texture = ExtResource( 5 )
-centered = false
+[node name="building_1" parent="party_viewer/buildings" instance=ExtResource( 7 )]
 
-[node name="card" type="Node2D" parent="party_viewer"]
-
-[node name="background" type="Sprite" parent="party_viewer/card"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="lbl_question" type="Label" parent="party_viewer/card"]
-margin_left = 70.0
-margin_top = 231.0
-margin_right = 328.0
-margin_bottom = 365.0
-text = "Ola!
-"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_choice_1" type="Button" parent="party_viewer/card"]
-margin_left = 70.3273
-margin_top = 383.99
-margin_right = 328.327
-margin_bottom = 425.99
-text = "Tothetuho"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="btn_choice_2" type="Button" parent="party_viewer/card"]
-margin_left = 70.3273
-margin_top = 440.99
-margin_right = 328.327
-margin_bottom = 482.99
-text = "Tothetuho"
-
-[node name="btn_choice_3" type="Button" parent="party_viewer/card"]
-margin_left = 70.3273
-margin_top = 496.99
-margin_right = 328.327
-margin_bottom = 538.99
-text = "Tothetuho"
+[node name="card" parent="party_viewer" instance=ExtResource( 2 )]
+script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -148,6 +100,3 @@ text = "Metric 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="party_viewer/card/btn_choice_1" to="." method="_on_btn_choice_1_pressed"]
-[connection signal="pressed" from="party_viewer/card/btn_choice_2" to="." method="_on_btn_choice_2_pressed"]
-[connection signal="pressed" from="party_viewer/card/btn_choice_3" to="." method="_on_btn_choice_3_pressed"]

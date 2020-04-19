@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/graphics/Cards/card_background.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/Characters/icon_r2d2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/card.gd" type="Script" id=3]
+
+[node name="card" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="lbl_question" type="Label" parent="."]
+margin_left = 54.0
+margin_top = 170.0
+margin_right = 312.0
+margin_bottom = 304.0
+text = "Ola!
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="character" type="Sprite" parent="."]
+position = Vector2( 259.053, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="btn_choice_1" type="Button" parent="."]
+margin_left = 54.3273
+margin_top = 322.99
+margin_right = 312.327
+margin_bottom = 364.99
+text = "Tothetuho"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btn_choice_2" type="Button" parent="."]
+margin_left = 54.3273
+margin_top = 379.99
+margin_right = 312.327
+margin_bottom = 421.99
+text = "Tothetuho"
+
+[node name="btn_choice_3" type="Button" parent="."]
+margin_left = 54.3273
+margin_top = 435.99
+margin_right = 312.327
+margin_bottom = 477.99
+text = "Tothetuho"
+[connection signal="pressed" from="btn_choice_1" to="." method="_on_btn_choice_1_pressed"]
+[connection signal="pressed" from="btn_choice_2" to="." method="_on_btn_choice_2_pressed"]
+[connection signal="pressed" from="btn_choice_3" to="." method="_on_btn_choice_3_pressed"]
