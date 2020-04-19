@@ -62,16 +62,20 @@ func _on_background_2_finished():
 		$sounds/pause_timer.start()
 
 func _on_pause_timer_timeout():
+	stop_all_background_music()
 	if Utils.rng.randf() > 0.5:
 		$sounds/background_1.play()
 	else:
 		$sounds/background_2.play()
 
 func play_game_over():
-	$sounds/background_1.stop()
-	$sounds/background_2.stop()
+	stop_all_background_music()
 	$sounds/game_over.play()
 
+func stop_all_background_music():
+	$sounds/background_1.stop()
+	$sounds/background_2.stop()
+	
 func play_new_card():
 	if Utils.rng.randf() > 0.5:
 		$sounds/new_card_1.play()
