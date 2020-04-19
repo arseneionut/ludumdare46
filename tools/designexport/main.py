@@ -8,7 +8,7 @@ class Utils:
     @staticmethod
     def get_key_with_debug(dictionary, key):
         if key not in dictionary:
-            print("Key %s could not be found in %s", key, dictionary)
+            print("Key {} could not be found in {}".format(key, dictionary))
             return "0"  # this is so that it does not stop
         return dictionary[key]
 
@@ -52,22 +52,36 @@ class YMLNodes:
     METRICS = "metrics"
     START_QUESTION = "start-question"
     QUESTIONS = "questions"
+    CHARACTERS = "characters"
 
 
 class Question:
-    def __init__(self, json_question_data):
+    def __init__(self,name, json_question_data):
+        self.name = name
         self.conditions = []
         self.text = Utils.get_key_with_debug(json_question_data, 'text')
         self.choices = []
         self.next = []
-        for condition in Utils.get_key_with_debug(json_question_data, 'conditions'):
-            self.conditions.append(Condition(condition))
+        self.character = Utils.get_key_with_debug(json_question_data, 'character')
+        self.in_random_pool = Utils.get_key_with_debug(json_question_data, 'in-random-pool')
+        if(Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
+            for condition in Utils.get_key_with_debug(json_question_data, 'conditions'):
+                self.conditions.append(Condition(condition))
 
         for choice in Utils.get_key_with_debug(json_question_data, 'choices'):
             self.choices.append(Choice(choice))
 
+        if len(json_question_data['choices']) != 2:
+            print("Question {} has wrong number of choices".format(self.name))
+
         for chance in Utils.get_key_with_debug(json_question_data, 'next'):
             self.next.append(Chance(chance))
+
+
+class Character:
+    def __init__ (self, json_character_data):
+        self.id = Utils.get_key_with_debug(json_character_data, 'id')
+        self.name = Utils.get_key_with_debug(json_character_data, 'name')
 
 
 class Chance:
@@ -79,11 +93,11 @@ class Chance:
             self.next_question = string_items[2].strip()
 
             if self.percentage > 1:
-                print("Percentace is above 100% for the %s next question chance", self.next_question)
+                print("Percentace is above 100% for the {} next question chance".format(self.next_question))
             elif self.percentage < 0:
-                print("Percentage is negative for the %s next question chance", self.next_question)
+                print("Percentage is negative for the {} next question chance".format(self.next_question))
         else:
-            print("Chance is fucked up: %s", json_chance_data)
+            print("Chance is fucked up: {}".format(json_chance_data))
 
 
 class Condition:
@@ -122,9 +136,12 @@ class Action:
         string_items = json_action_data.split(' ')
 
         if len(string_items) == 3:
-            self.action_type = ActionType.get_action_type(string_items[1].strip())
-            self.key = string_items[0].strip()
-            self.value = int(string_items[2].strip())
+            if string_items[0].strip() != 'message':
+                self.action_type = ActionType.get_action_type(string_items[1].strip())
+                self.key = string_items[0].strip()
+                self.value = int(string_items[2].strip())
+            else:
+                self.value = json_action_data
 
         elif len(string_items) == 2:
             self.action_type = ActionType.get_action_type(string_items[0].strip())
@@ -169,10 +186,62 @@ class Validator:
             elif node == YMLNodes.QUESTIONS:
                 self._processed_data[YMLNodes.QUESTIONS] = {}
                 for question_name, question_data in node_data.items():
-                    self._processed_data[YMLNodes.QUESTIONS][question_name] = Question(question_data)
+                    self._processed_data[YMLNodes.QUESTIONS][question_name] = Question(question_name, question_data)
+            elif node == YMLNodes.CHARACTERS:
+                self._processed_data[YMLNodes.CHARACTERS] = []
+                for character in node_data:
+                    self._processed_data[YMLNodes.CHARACTERS].append(Character(character))
 
-        print("Question Count: ", len(self._processed_data[YMLNodes.QUESTIONS]))
-        print("Metrics Count: ", len(self._processed_data[YMLNodes.METRICS]))
+        print("Question Count: {}".format(len(self._processed_data[YMLNodes.QUESTIONS])))
+        print("Metrics Count: {}".format(len(self._processed_data[YMLNodes.METRICS])))
+
+    def get_questions_by_metrics(self, fun, police, tokens):
+        questions_list = {}
+        for question_id, question_data in self._processed_data[YMLNodes.QUESTIONS].items():
+            for condition in question_data.conditions:
+                if condition.name == 'fun':
+                    if not self.compare(fun, condition.value, condition.sign):
+                        break
+                if condition.name == 'police':
+                    if not self.compare(police, condition.value, condition.sign):
+                        break
+                if condition.type == ConditionTypes.TOKEN:
+                    has_token = False
+                    for index in range(0, len(tokens)):
+                        if condition.token_presence:
+                            if tokens[index] == condition.name:
+                                has_token = True;
+                            if not has_token and index == len(tokens) - 1:
+                                break
+                        if not condition.token_presence:
+                            if tokens[index] == condition.name:
+                                has_token = True
+                            if has_token and index == len(tokens) - 1:
+                                break
+            questions_list[question_id] = question_data
+
+    @staticmethod
+    def compare(a, b, sign):
+        if sign == ConditionSigns.GREATER_THAN:
+            return a > b
+        elif sign == ConditionSigns.LESSER_THAN:
+            return a < b
+        elif sign == ConditionSigns.GREATER_OR_EQUAL:
+            return a >= b
+        elif sign == ConditionSigns.LESSER_OR_EQUAL:
+            return a <= b
+        elif sign == ConditionSigns.EQUAL:
+            return a == b
+
+
+class TestCards:
+    def __init__(self, validator):
+        self.validator = validator
+
+        self.fun = 0
+        self.police = 0
+
+
 
 def main(ymlpath, jsonpath, test_cards):
     print(os.path.abspath(ymlpath))
