@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://assets/graphics/Buildings/background.png" type="Texture" id=8]
 [ext_resource path="res://assets/sound/background_1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/background_2.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sound/game_over.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sound/phone.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sound/door.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sound/btn.ogg" type="AudioStream" id=14]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -109,4 +113,27 @@ volume_db = -18.174
 
 [node name="background_2" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 10 )
-volume_db = -18.174
+volume_db = -12.116
+
+[node name="pause_timer" type="Timer" parent="sounds"]
+wait_time = 3.0
+one_shot = true
+
+[node name="game_over" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 11 )
+
+[node name="new_card_1" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 13 )
+
+[node name="new_card_2" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 12 )
+
+[node name="button_press" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 14 )
+[connection signal="finished" from="sounds/background_1" to="." method="_on_background_1_finished"]
+[connection signal="finished" from="sounds/background_2" to="." method="_on_background_2_finished"]
+[connection signal="timeout" from="sounds/pause_timer" to="." method="_on_pause_timer_timeout"]
+[connection signal="finished" from="sounds/game_over" to="." method="_on_game_over_finished"]
+[connection signal="finished" from="sounds/new_card_1" to="." method="_on_game_over_finished"]
+[connection signal="finished" from="sounds/new_card_2" to="." method="_on_game_over_finished"]
+[connection signal="finished" from="sounds/button_press" to="." method="_on_game_over_finished"]

@@ -2,6 +2,9 @@ extends Node2D
 
 signal state_updated
 signal new_game
+signal game_over
+signal new_card
+signal button_press
 
 var engine
 var state
@@ -40,6 +43,7 @@ func populate_messages():
 	$btn_choice_3.text = "Next"
 
 func populate_current_question():
+	emit_signal("new_card")
 	state = 0
 	var question = engine.get_question(engine.get_current_question_id())
 	$character.visible = true
@@ -71,6 +75,7 @@ func _on_btn_choice_3_pressed():
 	button_press(2)
 
 func button_press(button):
+	emit_signal("button_press")
 	match state:
 		0:
 			button_press_answer(button)
@@ -81,6 +86,8 @@ func button_press(button):
 
 func button_press_answer(button):
 	engine.make_choice(button)
+	if (engine.is_game_over()):
+		emit_signal("game_over")
 	state = 2
 	populate_messages()
 	emit_signal("state_updated")

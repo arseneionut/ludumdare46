@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/police.ogg-9f1383e09c2c8bace11d9bf69fab6a1f.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/police.ogg"
+dest_files=[ "res://.import/police.ogg-9f1383e09c2c8bace11d9bf69fab6a1f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
