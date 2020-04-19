@@ -210,22 +210,37 @@ func is_game_over():
 func _choose_next_question():
 	var question = get_question(_current_question_id)
 	var explicit_next = _build_explicit_next(question.next)
+	var explicit_others = _build_explicit_others(explicit_next)
 	var random = Utils.rng.randf()
+	if explicit_others.size() == 0:
+		var sum_of_explicit_next = 0
+		for n in explicit_next:
+			sum_of_explicit_next += n.probability
+		random *= sum_of_explicit_next
 	var selection = null
+	print("***** choose next question")
+	print("  choosing from next with random %f" % [random])
 	for n in explicit_next:
-		if random < n.probability:
+		print("  %s" % n.to_string())
+	for n in explicit_next:
+		if random <= n.probability:
 			selection = n.id
 			break
 		else:
 			random -= n.probability
 	if selection == null:
-		var explicit_others = _build_explicit_others(explicit_next)
+		print("  choosing from others")
+		for o in explicit_others:
+			print("    %s" % o.id)
 		if explicit_others.size() > 0:
 			selection = explicit_others[0].id
+	else:
+		print("  chosen " + selection)
 	if selection == null:
 		_current_messages.append("No more things to do!")
 		_game_over = true
 	else:
+		print("  chosen " + selection)
 		_current_question_id = selection
 
 func _run_action(action, actions):

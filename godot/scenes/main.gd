@@ -5,7 +5,7 @@ var engine
 var card
 
 func _ready():
-	tests()
+	#tests()
 	card = $party_viewer/card
 	card.connect("state_updated", self, "_on_card_state_updated")
 	card.connect("new_game", self, "_on_card_new_game")
