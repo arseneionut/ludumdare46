@@ -1,0 +1,260 @@
+{
+  "characters": [
+    {
+      "id": "santa",
+      "name": "Santa Klaus"
+    },
+    {
+      "id": "r2d2",
+      "name": "R2-D2"
+    },
+    {
+      "id": "50cent",
+      "name": "50 cent"
+    }
+  ],
+  "metrics": {
+    "drink": {
+      "start": 50,
+      "min": 0,
+      "max": 100,
+      "min-action": [
+        "message No booze... Your milkshake chased everybody out the yard.",
+        "game over"
+      ],
+      "max-action": [
+        "message Everyone's wasted man, that 27th shot was too much.",
+        "game over"
+      ]
+    },
+    "hype": {
+      "start": 50,
+      "min": 0,
+      "max": 100,
+      "min-action": [
+        "message Snoop Lion rated the party  -4/20. You wear a bag over your face now.",
+        "game over"
+      ],
+      "max-action": [
+        "message That last image literally broke the internet. You are literally the last meme.",
+        "game over"
+      ]
+    },
+    "madness": {
+      "start": 50,
+      "min": 0,
+      "max": 100,
+      "min-action": [
+        "message BOOOOrrring. Straight up snoozefes bro. Just go to bed.",
+        "game over"
+      ],
+      "max-action": [
+        "message This party is the bomb! Popo shutting the whole thing down.",
+        "game over"
+      ]
+    }
+  },
+  "start-question": "question_0",
+  "questions": {
+    "question_0": {
+      "id": "question_0",
+      "character": "n/a",
+      "text": "I swear, this is the best. Party. EVER! You just need to bring some more people in and keep the party alive. Are you ready?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Hell ya!!! Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You're a Party God!",
+            "drink += 0",
+            "hype += 0",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You got this, you're a Party God!",
+            "drink += 0",
+            "hype += 0",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_1": {
+      "id": "question_1",
+      "character": "dork1",
+      "text": "Hello Party God, can I attend the party please? I will make you famous on reddit.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Thank you! UwU",
+            "drink += 0",
+            "hype += 4",
+            "madness += -4"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You later find out that guy made a douchbag meme with your face",
+            "drink += 0",
+            "hype += -12",
+            "madness += -4"
+          ]
+        }
+      ]
+    },
+    "question_2": {
+      "id": "question_2",
+      "character": "partygirl2",
+      "text": "Hey stranger, what must a girl do around here to get a drink?? Maybe #nobrachallenge?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message boobs :)",
+            "drink += -12",
+            "hype += 0",
+            "madness += 8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Someone from the crowd shouts \"virgin!\"",
+            "drink += 0",
+            "hype += -4",
+            "madness += -4"
+          ]
+        }
+      ]
+    },
+    "question_3": {
+      "id": "question_3",
+      "character": "partyguy",
+      "text": "Yo, make that dude puking in the punchbowl famous on the interwebs!!!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message 2 sad emojis and a report. Your grandma commented \"I raised you better than this\"",
+            "drink += 0",
+            "hype += -8",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Posts of shots and girls having flood Instadrank. You are famous",
+            "drink += 12",
+            "hype += 16",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_4": {
+      "id": "question_4",
+      "character": "gothgirl",
+      "text": "Can I finish my ritual in the upstairs bedroom?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message A headless rooster running through the yard is not really the best party treat",
+            "drink += 0",
+            "hype += -16",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message A rooster jumps on the dance floor and a new viral dance move picks up. #roosterchallenge",
+            "drink += 0",
+            "hype += 12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_5": {
+      "id": "question_5",
+      "character": "rickmorty",
+      "text": "What's up my glip glops. Wicked party. Do you accept alcohol spewing Altairian tapeworms to the party? ",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Who knew tapeworm booze would be so intoxicating? A couple of guests fainted thought.",
+            "drink += 12",
+            "hype += 0",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The old dude draws a square shape with his middle fingers.",
+            "drink += -16",
+            "hype += 4",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_6": {
+      "id": "question_6",
+      "character": "police1",
+      "text": "Officer: Hello meow, we have a noise complaint, do you mind if we take a look around meow, sir?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Officer: Yes, meow, we'll just settle confiscating this here booze meow, just keep it quiet.",
+            "drink += -16",
+            "hype += 0",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Exercising your citizen rights turned the cops around. Out of spite they knocked over a keg.",
+            "drink += -12",
+            "hype += 0",
+            "madness += -4"
+          ]
+        }
+      ]
+    },
+    "question_10": {
+      "id": "question_10",
+      "character": "santa",
+      "text": "Some red fatso stumbles climbing the steps to your door. He's higher than a blimp, mumbles something and keeps trying to barge in. Do you let him in?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The red outfit is not a costume. The bastard really is Santa, wasted after partying with the Easter Bunny. He still has some eggnog and some baggies of baking powder.",
+            "drink += 16",
+            "hype += 0",
+            "madness += 12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message For sure you saved a lot of drinks by not letting that drunk in. On the dancefloor, you see people give you the stink eye, thinking you hate Santa.",
+            "drink += 8",
+            "hype += 0",
+            "madness += -12"
+          ]
+        }
+      ]
+    }
+  }
+}
