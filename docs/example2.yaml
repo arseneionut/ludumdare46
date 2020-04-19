@@ -1,6 +1,10 @@
 characters:
   - id: santa
     name: Santa Klaus
+  - id: r2d2
+    name: R2-D2
+  - id: 50cent
+    name: 50 cent
 metrics:
   fun:
     start: 50
@@ -39,6 +43,7 @@ start-question: blabla1
 questions:
   blabla1:
     conditions:
+    character: santa
     text: >-
       Some dude wants in. Seems to be nice, but a little high. Do you let him
       in?
@@ -46,7 +51,7 @@ questions:
       - text: 'yes'
         actions:
           - fun += 15
-          - police += 10
+          - police += 100
           - money -= 5
           - add token1
           - remove token2
@@ -69,6 +74,7 @@ questions:
       - fun > 30
       - police < 80
       - token1 absent
+    character: r2d2
     text: blabla2
     choices:
       - text: 'yes'
@@ -87,6 +93,7 @@ questions:
       - 50% -> blabla1
   blabla3:
     conditions:
+    character: 50cent
     text: blabla3
     choices:
       - text: 'yes'

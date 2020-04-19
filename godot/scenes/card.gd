@@ -20,6 +20,7 @@ func populate_question():
 		populate_current_question()
 
 func populate_game_over():
+	$character.visible = false
 	$btn_choice_1.visible = false
 	$btn_choice_2.visible = false
 	$lbl_question.visible = true
@@ -41,6 +42,8 @@ func populate_messages():
 func populate_current_question():
 	state = 0
 	var question = engine.get_question(engine.get_current_question_id())
+	$character.visible = true
+	$character.texture = load("res://assets/graphics/Characters/icon_%s.png" % question.character)
 	$btn_choice_1.visible = false
 	$btn_choice_2.visible = false
 	$btn_choice_3.visible = false
