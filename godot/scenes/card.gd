@@ -44,6 +44,11 @@ func populate_current_question():
 	var question = engine.get_question(engine.get_current_question_id())
 	$character.visible = true
 	$character.texture = load("res://assets/graphics/Characters/icon_%s.png" % question.character)
+	var character = engine.get_character(question.character)
+	if character != null:
+		$lbl_character_name.text = character.name
+	else:
+		$lbl_character_name.text = ""
 	$btn_choice_1.visible = false
 	$btn_choice_2.visible = false
 	$btn_choice_3.visible = false

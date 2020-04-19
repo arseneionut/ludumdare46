@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scenes/building_2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/building_1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/graphics/Buildings/background.png" type="Texture" id=8]
+[ext_resource path="res://assets/sound/background_1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sound/background_2.ogg" type="AudioStream" id=10]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -98,3 +100,13 @@ text = "Metric 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="sounds" type="Node" parent="."]
+
+[node name="background_1" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 9 )
+volume_db = -18.174
+
+[node name="background_2" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 10 )
+volume_db = -18.174

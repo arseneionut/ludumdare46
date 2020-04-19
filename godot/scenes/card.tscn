@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/graphics/Cards/card_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/Characters/icon_r2d2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/card.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/font_question.tres" type="DynamicFont" id=4]
+[ext_resource path="res://assets/fonts/font_character_name.tres" type="DynamicFont" id=5]
 
 [node name="card" type="Node2D"]
 script = ExtResource( 3 )
@@ -11,11 +13,26 @@ script = ExtResource( 3 )
 texture = ExtResource( 1 )
 centered = false
 
+[node name="lbl_character_name" type="Label" parent="."]
+margin_left = 34.0
+margin_top = 49.0
+margin_right = 245.0
+margin_bottom = 147.0
+custom_fonts/font = ExtResource( 5 )
+text = "CHARACTER"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="lbl_question" type="Label" parent="."]
 margin_left = 54.0
 margin_top = 170.0
 margin_right = 312.0
 margin_bottom = 304.0
+custom_fonts/font = ExtResource( 4 )
 text = "Ola!
 "
 autowrap = true
@@ -33,6 +50,7 @@ margin_left = 54.3273
 margin_top = 322.99
 margin_right = 312.327
 margin_bottom = 364.99
+custom_fonts/font = ExtResource( 4 )
 text = "Tothetuho"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -43,13 +61,18 @@ margin_left = 54.3273
 margin_top = 379.99
 margin_right = 312.327
 margin_bottom = 421.99
+custom_fonts/font = ExtResource( 4 )
 text = "Tothetuho"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="btn_choice_3" type="Button" parent="."]
 margin_left = 54.3273
 margin_top = 435.99
 margin_right = 312.327
 margin_bottom = 477.99
+custom_fonts/font = ExtResource( 4 )
 text = "Tothetuho"
 [connection signal="pressed" from="btn_choice_1" to="." method="_on_btn_choice_1_pressed"]
 [connection signal="pressed" from="btn_choice_2" to="." method="_on_btn_choice_2_pressed"]

@@ -153,9 +153,9 @@ func get_character_names():
 		result.append(ch.name)
 	return result
 
-func get_character(character_name):
+func get_character(character_id):
 	for ch in _characters:
-		if ch.name == character_name:
+		if ch.id == character_id:
 			return ch
 	return null
 
