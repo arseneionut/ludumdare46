@@ -29,15 +29,15 @@ class Metric:
 	
 	func set_value(value, action_list):
 		self.value = value
-		if value < min_value:
-			value = min_value
-		if value > max_value:
-			value = max_value
-		if value == min_value and not min_already_triggered:
+		if self.value < min_value:
+			self.value = min_value
+		if self.value > max_value:
+			self.value = max_value
+		if self.value == min_value and not min_already_triggered:
 			for action in min_actions:
 				action_list.append(action)
 			min_already_triggered = true
-		if value == max_value and not max_already_triggered:
+		if self.value == max_value and not max_already_triggered:
 			for action in max_actions:
 				action_list.append(action)
 			max_already_triggered = true

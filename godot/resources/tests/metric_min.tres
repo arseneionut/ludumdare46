@@ -1,0 +1,38 @@
+{
+    "characters": [
+        {
+            "id": "santa",
+            "name": "Santa Klaus"
+        }
+    ],
+    "metrics": {
+        "money": {
+            "start": 50,
+            "min": 0,
+            "max": 100,
+            "min-action": [
+                "message You're broke.",
+                "game over"
+            ],
+            "max-action": [
+                "message You skipped town with all the cash. Party over.",
+                "game over"
+            ]
+        }
+    },
+    "start-question": "test-1",
+    "questions": {
+        "test-1": {
+            "character": "santa",
+            "text": "Lorem test-1?",
+            "choices": [
+                {
+                    "text": "no",
+                    "actions": [
+                        "money -= 100"
+                    ]
+                }
+            ],
+        }
+    }
+}

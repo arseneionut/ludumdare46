@@ -35,6 +35,9 @@ func _ready():
 	_TEST_condition_1()
 	_TEST_condition_2()
 	_TEST_condition_3()
+	_TEST_metric_min()
+	_TEST_metric_max()
+	_TEST_metric_loop()
 	
 	_process_results()
 	Utils.rng = old_rng
@@ -145,6 +148,53 @@ func _TEST_condition_3():
 	_engine.make_choice(0)
 	_check_equal("test-3", _engine.get_current_question_id())	
 	_check_equal(false, _engine.is_game_over())
+	_end_test()
+
+func _TEST_metric_min():
+	_test_case("metric_min")
+	
+	_engine.make_choice(0)
+	_check_equal(true, _engine.is_game_over())
+	var messages = _engine.get_latest_messages()
+	_check_equal(1, messages.size())
+	_check_equal("You're broke.", messages[0])
+	_end_test()
+
+func _TEST_metric_max():
+	_test_case("metric_max")
+	
+	_engine.make_choice(0)
+	_check_equal(true, _engine.is_game_over())
+	var messages = _engine.get_latest_messages()
+	_check_equal(1, messages.size())
+	_check_equal("You skipped town with all the cash. Party over.", messages[0])
+	_end_test()
+
+# Test that we don't execute min/max-actions multiple times
+func _TEST_metric_loop():
+	_test_case("metric_loop")
+	
+	_check_equal("test-1", _engine.get_current_question_id())	
+	_engine.make_choice(0)
+	_check_equal(false, _engine.is_game_over())
+	var messages = _engine.get_latest_messages()
+	_check_equal(1, messages.size())
+	_check_equal("You skipped town with all the cash.", messages[0])
+	
+	_check_equal("test-2", _engine.get_current_question_id())
+	_engine.make_choice(0)
+	_check_equal(false, _engine.is_game_over())
+	messages = _engine.get_latest_messages()
+	_check_equal(1, messages.size())
+	_check_equal("You're broke.", messages[0])
+	
+	_check_equal("test-1", _engine.get_current_question_id())	
+	_engine.make_choice(0)
+	_check_equal(false, _engine.is_game_over())
+	messages = _engine.get_latest_messages()
+	_check_equal(1, messages.size())
+	_check_equal("You skipped town with all the cash.", messages[0])
+
 	_end_test()
 
 func _test_case(test_name):
