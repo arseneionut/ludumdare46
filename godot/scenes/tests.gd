@@ -16,6 +16,10 @@ class MockRng:
 		return _value
 
 func _ready():
+	# don't run tests if this is not a debug build
+	if OS.has_feature("standalone"):
+		return
+
 	var old_rng = Utils.rng
 	_rng = MockRng.new()
 	Utils.rng = _rng
@@ -35,12 +39,30 @@ func _TEST_basic():
 	_check_equal("santa", _engine.get_question("blabla1").character)
 
 func _TEST_next_selection():
-	pass
+	_test_case("next_selection")
+	_check_equal("test-1", _engine.get_current_question_id())
+	
+	_rng.setup(0.5)
+	_engine.make_choice(0)
+	_check_equal("test-2", _engine.get_current_question_id())
+	
+	_reset()
+	_rng.setup(0.7)
+	_engine.make_choice(0)
+	_check_equal("test-3", _engine.get_current_question_id())
+
+	_reset()
+	_rng.setup(0.8)
+	_engine.make_choice(0)
+	_check_equal("test-4", _engine.get_current_question_id())
 
 func _test_case(test_name):
 	_current_test = test_name
+	_reset()
+
+func _reset():
 	var content = \
-		Utils.read_content("res://resources/tests/%s.tres" % test_name)
+		Utils.read_content("res://resources/tests/%s.tres" % _current_test)
 	var jsonResult = JSON.parse(content)
 	_engine = QuestionEngine.new(jsonResult.result)
 
