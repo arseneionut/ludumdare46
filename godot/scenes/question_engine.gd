@@ -50,6 +50,14 @@ class Choice:
 		text = definition.text
 		actions = Utils.safe_get(definition, "actions", [])
 	
+	func get_affected_metrics():
+		var metrics = {}
+		for action in actions:
+			var bits = Utils.split_and_clean(action, " ")
+			if bits.size() == 3:
+				metrics[bits[0]] = 1
+		return metrics.keys()
+	
 	func to_string():
 		var result = []
 		result.append("choice '%s'" % [text])

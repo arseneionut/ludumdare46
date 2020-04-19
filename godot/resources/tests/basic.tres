@@ -66,7 +66,6 @@
           "actions": [
             "fun += 15",
             "police += 100",
-            "money -= 5",
             "add token1",
             "remove token2",
             "message This guy stirred up fun conversations and he seems to be very popular. Noise levels are also higher."
@@ -76,7 +75,6 @@
           "text": "no",
           "actions": [
             "fun -= 10",
-            "police -= 5",
             "money -= 5",
             "message People are not very happy with how you handled this person. He seemed nice."
           ]

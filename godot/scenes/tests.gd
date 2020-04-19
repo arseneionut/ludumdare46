@@ -54,6 +54,16 @@ func _TEST_basic():
 	var question = _engine.get_question("blabla1")
 	_check_equal(true, question.in_random_pool)
 	_check_equal("santa", question.character)
+	
+	var metrics_1 = question.choices[0].get_affected_metrics()
+	_check_equal(2, metrics_1.size())
+	_check_equal("fun", metrics_1[0])
+	_check_equal("police", metrics_1[1])
+
+	var metrics_2 = question.choices[1].get_affected_metrics()
+	_check_equal(2, metrics_2.size())
+	_check_equal("fun", metrics_2[0])
+	_check_equal("money", metrics_2[1])
 	_end_test()
 
 func _TEST_next_selection():
