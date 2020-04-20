@@ -111,6 +111,7 @@ one_shot = true
 
 [node name="game_over" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 11 )
+volume_db = -10.0
 
 [node name="new_card_1" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 13 )
