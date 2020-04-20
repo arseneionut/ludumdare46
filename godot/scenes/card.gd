@@ -41,7 +41,7 @@ func populate_messages():
 	$lbl_question.text = text
 	$btn_choice_3.visible = true
 	if engine.is_game_over():
-		$btn_choice_3.text = "Game Over"
+		$btn_choice_3.text = "Play again?"
 	else:
 		$btn_choice_3.text = "Next"
 
@@ -83,21 +83,19 @@ func button_press(button):
 		0:
 			button_press_answer(button)
 		1:
-			button_press_game_over()
-		2:
 			button_press_continue()
 
 func button_press_answer(button):
 	engine.make_choice(button)
-	if (engine.is_game_over()):
+	if engine.is_game_over():
 		emit_signal("game_over")
-	state = 2
+	state = 1
 	populate_messages()
 	emit_signal("state_updated")
 
-func button_press_game_over():
-	emit_signal("new_game")
-
 func button_press_continue():
-	state = 0
-	populate_question()
+	if engine.is_game_over():
+		emit_signal("new_game")
+	else:
+		state = 0
+		populate_question()

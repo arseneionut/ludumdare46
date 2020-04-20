@@ -3,14 +3,22 @@ extends Node2D
 var QuestionEngine = load("res://scenes/question_engine.gd")
 var engine
 var card
+var buildings
 
 func _ready():
+#	var i = 1
+#	var a = 1
+#	while i < 15:
+#		i += 1
+#		a *= 1.4
+#		print(a)
 	card = $party_viewer/card
 	card.connect("state_updated", self, "_on_card_state_updated")
 	card.connect("new_game", self, "_on_card_new_game")
 	card.connect("game_over", self, "_on_card_game_over")
 	card.connect("new_card", self, "_on_card_new_card")
 	card.connect("button_press", self, "_on_card_button_press")
+	buildings = $party_viewer/buildings
 	initialize_engine()
 
 func _on_card_state_updated():
@@ -20,15 +28,18 @@ func _on_card_new_game():
 	initialize_engine()
 
 func _on_card_game_over():
+	buildings.game_over()
 	play_game_over()
 
 func _on_card_new_card():
+	buildings.new_card()
 	play_new_card()
 
 func _on_card_button_press():
 	play_button_press()
 
 func initialize_engine():
+	buildings.new_game()
 	$sounds/pause_timer.start()
 	var content = Utils.read_content("res://resources/question.tres")
 	var jsonResult = JSON.parse(content)
