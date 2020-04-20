@@ -234,16 +234,6 @@
             "madness += 0",
             "add tutorial"
           ]
-        },
-        {
-          "text": "no",
-          "actions": [
-            "message Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You got this, you're a Party God!",
-            "drink += 0",
-            "hype += 0",
-            "madness += 0",
-            "add tutorial"
-          ]
         }
       ],
       "conditions": [

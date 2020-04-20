@@ -284,7 +284,7 @@ def make_question(row):
             "tutorial absent"
         ]
         question["choices"][0]["actions"].append("add tutorial")
-        question["choices"][1]["actions"].append("add tutorial")
+        question["choices"].pop()
     return question
 
 with open("leo.csv") as csv_file:
