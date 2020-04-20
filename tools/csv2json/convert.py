@@ -234,14 +234,29 @@ def normalize(v):
     else:
         return v
 
+def character_present(char_id):
+    if char_id == "n/a":
+        return True
+    for char in result["characters"]:
+        if char["id"] == char_id:
+            return True
+    return False
+
 def make_question(row):
     new_row = {}
     for k in row.keys():
         new_row[k.lower()] = row[k]
     row = new_row
+    if row["y_message"].strip() == "":
+        print("question '%s': empty y_message" % row["name"])
+    if row["n_message"].strip() == "":
+        print("question '%s': empty n_message" % row["name"])
+    char = row["char"].strip()
+    if not character_present(char):
+        print("question '%s': character '%s' not found" % (row["name"], char))
     question = {
         "id": row["name"],
-        "character": row["char"],
+        "character": char,
         "text": row["txt"],
         "choices": [
             {
@@ -278,7 +293,6 @@ with open("leo.csv") as csv_file:
         txt = row["txt"].strip()
         if txt != "":
             result["questions"][row["name"]] = make_question(row)
-            print(row["txt"])
 
 def spit(file_name, content):
     with open(file_name, "w") as f:

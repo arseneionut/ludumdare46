@@ -412,7 +412,7 @@ questions:
     text: The mime pulls the edges of his mouth with his fingers, then points at the
       door.
   question_23:
-    character: punk
+    character: punk1
     choices:
     - actions:
       - message Punk's not dead!
@@ -807,7 +807,7 @@ questions:
     id: question_42
     text: Want to see a trick?
   question_43:
-    character: 'partygirl2 '
+    character: partygirl2
     choices:
     - actions:
       - message The party is stalling but you make reddit front page.

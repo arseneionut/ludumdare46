@@ -802,7 +802,7 @@
     },
     "question_23": {
       "id": "question_23",
-      "character": "punk",
+      "character": "punk1",
       "text": "Yo, my friends are on their way",
       "choices": [
         {
@@ -1302,7 +1302,7 @@
     },
     "question_43": {
       "id": "question_43",
-      "character": "partygirl2 ",
+      "character": "partygirl2",
       "text": "Hold up! Let's all do the mannequin challenge",
       "choices": [
         {
