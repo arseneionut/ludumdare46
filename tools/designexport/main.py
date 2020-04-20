@@ -69,6 +69,8 @@ class Question:
         self.character = Utils.get_key_with_debug(json_question_data, 'character')
         if 'in-random-pool' in json_question_data:
             self.in_random_pool = Utils.get_key_with_debug(json_question_data, 'in-random-pool')
+        else:
+            self.in_random_pool = False
 
         if 'conditions' in json_question_data:
             if (Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
