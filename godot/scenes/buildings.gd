@@ -33,12 +33,15 @@ func _redisplay():
 	show_level(level)
 
 func show_level(level):
-	var i = 1
+	hide_all()
+	get_node("buildings_%d" % level).visible = true
+
+func hide_all():
+	var i = 0
 	while i <= 15:
 		var node = get_node("buildings_%d" % i)
 		node.visible = false
 		i += 1
-	get_node("buildings_%d" % level).visible = true
 
 func _on_game_over_timer_timeout():
 	if state != GAME_OVER:
@@ -47,6 +50,8 @@ func _on_game_over_timer_timeout():
 	count_down_level -= 1
 	if count_down_level < 1:
 		$game_over_timer.stop()
+		hide_all()
+		$buildings_0.visible = true
 		return
 	show_level(count_down_level)
 
