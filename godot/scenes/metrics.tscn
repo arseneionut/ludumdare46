@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/metrics.gd" type="Script" id=1]
 [ext_resource path="res://scenes/metric.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/font_question.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/graphics/Metrics/metrics_background.png" type="Texture" id=4]
 [ext_resource path="res://assets/graphics/Metrics/bar_full.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/Metrics/icons/icon_drink.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/Metrics/icons/icon_hype.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/Metrics/icons/icon_madness.png" type="Texture" id=8]
 
 [node name="metrics" type="Node"]
 script = ExtResource( 1 )
@@ -48,6 +51,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="icon" type="Sprite" parent="metric_drink"]
+position = Vector2( 153.22, 11 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+
 [node name="metric_madness" type="Node2D" parent="."]
 position = Vector2( 24.5547, 495.609 )
 script = ExtResource( 2 )
@@ -83,6 +91,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="icon" type="Sprite" parent="metric_madness"]
+position = Vector2( 153.22, 17 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 8 )
+
 [node name="metric_hype" type="Node2D" parent="."]
 position = Vector2( 24.5547, 539.609 )
 script = ExtResource( 2 )
@@ -117,3 +130,8 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="icon" type="Sprite" parent="metric_hype"]
+position = Vector2( 153.22, 17 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 7 )
