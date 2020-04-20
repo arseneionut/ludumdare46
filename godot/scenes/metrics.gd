@@ -1,9 +1,9 @@
 extends Node
 
 func _ready():
-	$metric_drink.set_labels("sober", "wasted")
-	$metric_madness.set_labels("exposed", "supervised")
-	$metric_hype.set_labels("boooooring!", "exhausted")
+	$metric_drink.set_labels("min", "max")
+	$metric_madness.set_labels("min", "max")
+	$metric_hype.set_labels("min", "max")
 
 func update_values(dict):
 	$metric_drink.set_value(dict["drink"])

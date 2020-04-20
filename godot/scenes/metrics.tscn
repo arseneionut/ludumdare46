@@ -39,7 +39,6 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 313, 17 )
 
 [node name="lbl_min" type="Label" parent="metric_drink"]
-visible = false
 margin_top = 4.0
 margin_right = 127.0
 margin_bottom = 31.0
@@ -50,7 +49,6 @@ __meta__ = {
 }
 
 [node name="lbl_max" type="Label" parent="metric_drink"]
-visible = false
 margin_left = 174.0
 margin_top = 4.0
 margin_right = 313.0
