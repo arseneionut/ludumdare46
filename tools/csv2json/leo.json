@@ -395,6 +395,81 @@
         }
       ]
     },
+    "question_7": {
+      "id": "question_7",
+      "character": "cowboy",
+      "text": "Cowboy: G'day partner, can you toss a drink to a thirsty gunslinger?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The cowboy drinks a bottle of whiskey without a breath of air, and starts shooting his gun. Yeeehaw!! ",
+            "drink += -8",
+            "hype += 0",
+            "madness += 16"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The cowboy spits his chewing tabacco on the blue sway shoes of a trap artist/influencer/big pharma promoter.",
+            "drink += 4",
+            "hype += -12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_8": {
+      "id": "question_8",
+      "character": "disco2",
+      "text": "You get a request for playing an old disco song, \"keeping alive\" or something like that.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Hint: Bee Gees' Staying Alive has the perfect rhythm for CPR",
+            "drink += 4",
+            "hype += 0",
+            "madness += 4"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The next song is Tequilla, and everybody does shots",
+            "drink += -20",
+            "hype += 8",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_9": {
+      "id": "question_9",
+      "character": "partygirl",
+      "text": "People are asking for a wet t-shirt contest, what do you say?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message A really hot girl hops on the table and WHAM. Hits the floor knocked down by the ceiling fan. More drinks for the rest I guess. ",
+            "drink += 12",
+            "hype += -12",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message With total disregard for your sexist censorship, a whole group of strong independent women take their tops off. F the patriarchy. ",
+            "drink += 0",
+            "hype += 12",
+            "madness += 8"
+          ]
+        }
+      ]
+    },
     "question_10": {
       "id": "question_10",
       "character": "santa",
@@ -416,6 +491,1006 @@
             "drink += 8",
             "hype += 0",
             "madness += -12"
+          ]
+        }
+      ]
+    },
+    "question_11": {
+      "id": "question_11",
+      "character": "boomer1",
+      "text": "Hey there fellow kids, your party is fleek, can I bounce with you cats?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The guy gets his son out of the party as everyone is booing.",
+            "drink += 0",
+            "hype += -16",
+            "madness += -12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The man tries to hide his tears, dropping a sixpack as he leaves.",
+            "drink += 8",
+            "hype += -12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_12": {
+      "id": "question_12",
+      "character": "partyguy",
+      "text": "Doing kegstands, wanna join?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You handled yourself well, a true Party God",
+            "drink += -8",
+            "hype += 12",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The guy does a kegstand then burps the national anthem. A guy with an eagle t-shirt sheds a single tear.",
+            "drink += -4",
+            "hype += 20",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_13": {
+      "id": "question_13",
+      "character": "dork2",
+      "text": "Dorky kid: Hey mister, got a bunch of booze, can I join?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Thanks mister, this will give me +3 CHA amonst my own party members.",
+            "drink += 16",
+            "hype += -8",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The kid screeches out loudly before cursing you in elvish.",
+            "drink += 0",
+            "hype += -16",
+            "madness += 8"
+          ]
+        }
+      ]
+    },
+    "question_14": {
+      "id": "question_14",
+      "character": "sheen",
+      "text": "Party God ?! Hah! You?! Dare challenge me?!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You're a true warlock, I respect that. 5 models join the party bringing a ton of drinks",
+            "drink += 12",
+            "hype += 0",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The actor rolls his eyes, and you feel the weight of the eyes watchig  you.",
+            "drink += 0",
+            "hype += -8",
+            "madness += -8"
+          ]
+        }
+      ]
+    },
+    "question_15": {
+      "id": "question_15",
+      "character": "50cent",
+      "text": "Yo dawg, can I put on some real gangsta music ?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Oldies hip-hop and thugs shooting their guns. Party like it's 1999.",
+            "drink += 0",
+            "hype += -12",
+            "madness += 12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message A bunch of gangster looking dudes leave, stealing some of the drinks",
+            "drink += -16",
+            "hype += 0",
+            "madness += -12"
+          ]
+        }
+      ]
+    },
+    "question_16": {
+      "id": "question_16",
+      "character": "police2",
+      "text": "Officer: Excuse me sir, I need to check your garage, or else, I'm entering the house. Open the garage",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The officer seizes some of the booze stored in the garage",
+            "drink += -12",
+            "hype += -16",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The officer turns out to be a stripper, everybody grabs a chair as Joe Cocker starts playing. ",
+            "drink += 0",
+            "hype += 16",
+            "madness += -8"
+          ]
+        }
+      ]
+    },
+    "question_17": {
+      "id": "question_17",
+      "character": "karen2",
+      "text": "Hey, can I join? You won't be sorry",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The woman brings some drinks but immediately asks to see a manager",
+            "drink += 12",
+            "hype += 0",
+            "madness += -20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message She immediately asks to see a manager. People get a bit angry and start drinking to ignore that haircut",
+            "drink += -8",
+            "hype += 0",
+            "madness += 12"
+          ]
+        }
+      ]
+    },
+    "question_18": {
+      "id": "question_18",
+      "character": "disco1",
+      "text": "Party bus for PARTY GOD!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Everybody chants PARTY GOD PARTY GOD",
+            "drink += 12",
+            "hype += 16",
+            "madness += 8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Out of disaproval, people chant DRINKING BUS DRINKING BUS",
+            "drink += -12",
+            "hype += 4",
+            "madness += 12"
+          ]
+        }
+      ]
+    },
+    "question_19": {
+      "id": "question_19",
+      "character": "cena",
+      "text": "A true Party God can see me. Can you pretend you don't ?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Some people question you are the Party God",
+            "drink += -12",
+            "hype += -8",
+            "madness += 12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message His name is *trumpets playing* PARTY GOD",
+            "drink += 0",
+            "hype += 20",
+            "madness += 4"
+          ]
+        }
+      ]
+    },
+    "question_20": {
+      "id": "question_20",
+      "character": "deadpool",
+      "text": "Hey slick, toss a drink this way won't you, and I might just join in on this bender.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Your party now holds 10% of the world armaments",
+            "drink += -8",
+            "hype += 0",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Keep your drinks, you were never cool.",
+            "drink += 16",
+            "hype += 0",
+            "madness += -8"
+          ]
+        }
+      ]
+    },
+    "question_21": {
+      "id": "question_21",
+      "character": "gabe",
+      "text": "points to portable HDD: I've got HL3 on this baby, who's in?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Crossfire has never looked so good",
+            "drink += 0",
+            "hype += 20",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You heard guns locking, cocking, safeties off.",
+            "drink += 0",
+            "hype += 8",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_22": {
+      "id": "question_22",
+      "character": "mime",
+      "text": "The mime pulls the edges of his mouth with his fingers, then points at the door.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The mime joins the party, creeping everyone out.",
+            "drink += 0",
+            "hype += -20",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The mime joins the party, creeping everyone out.",
+            "drink += -4",
+            "hype += -12",
+            "madness += 8"
+          ]
+        }
+      ]
+    },
+    "question_23": {
+      "id": "question_23",
+      "character": "punk",
+      "text": "Yo, my friends are on their way",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Punk's not dead!",
+            "drink += -12",
+            "hype += 0",
+            "madness += 16"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You just dropkicked the Murphies.",
+            "drink += 20",
+            "hype += 0",
+            "madness += -4"
+          ]
+        }
+      ]
+    },
+    "question_24": {
+      "id": "question_24",
+      "character": "dog",
+      "text": "Woof Woof",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The dog does a double backflip. Everyone is stunned",
+            "drink += 0",
+            "hype += 16",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The dog makes the big puppy eyes. Everyone goes \"awww\"",
+            "drink += 12",
+            "hype += 0",
+            "madness += -20"
+          ]
+        }
+      ]
+    },
+    "question_25": {
+      "id": "question_25",
+      "character": "punk2",
+      "text": "Come on dude, take this shot with us!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You feel a sharp taste of gasoline and you black out for a couple of minutes",
+            "drink += 16",
+            "hype += 0",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You take a step back and Chad lights up the shots like he's seen on TikTok. They blow up taking Chad's eyebrows along.",
+            "drink += -12",
+            "hype += -20",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_26": {
+      "id": "question_26",
+      "character": "obama",
+      "text": "It is my opinion that every law abiding citizen will take a shot to keep this party going!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You drink somethink called Ocare, tasty, halucinating, but with a faint taste of socialism",
+            "drink += 20",
+            "hype += -4",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Defying the former president makes some nutjobs with red hats to start screeching.",
+            "drink += 0",
+            "hype += 16",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_27": {
+      "id": "question_27",
+      "character": "dude",
+      "text": "Do you think you are worthy for me to abide you being a Party God?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Three seconds of silence as everyone is in awe. Then everybody goes crazy.",
+            "drink += 12",
+            "hype += 20",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message ",
+            "drink += 0",
+            "hype += 0",
+            "madness += 20"
+          ]
+        }
+      ]
+    },
+    "question_28": {
+      "id": "question_28",
+      "character": "raveguy",
+      "text": "Drinks are sooo lame. Can I pass some of my product in this party?.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Drugs are bad, mmkay, a lot of people get really mad",
+            "drink += -12",
+            "hype += 0",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The fumes of alcohol keep the party hype burning and the spirits high.",
+            "drink += 16",
+            "hype += 0",
+            "madness += 12"
+          ]
+        }
+      ]
+    },
+    "question_29": {
+      "id": "question_29",
+      "character": "mime",
+      "text": "like he's holding something in his hand, turns it to the side, turns it back around, screws something on top of it. Then slings it back.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Everybody does this realizing they're throwing bottles of booze over their shoulders. ",
+            "drink += -12",
+            "hype += -20",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Mimes suck. Drink up is the new party anthem",
+            "drink += 16",
+            "hype += 12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_30": {
+      "id": "question_30",
+      "character": "satan",
+      "text": "Is your soul more important than keeping this party alive?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You made Satan cry.",
+            "drink += -12",
+            "hype += 0",
+            "madness += -12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The flames of hell, sulfur and brimstone liven up the party.",
+            "drink += 0",
+            "hype += 16",
+            "madness += 20"
+          ]
+        }
+      ]
+    },
+    "question_31": {
+      "id": "question_31",
+      "character": "obama",
+      "text": "Should I call my wife over?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Michelle comes and gives a lecture on fintess and how drinking is not good.",
+            "drink += -16",
+            "hype += -4",
+            "madness += 4"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The former president pours a line of shots called \"the Hussein\". ",
+            "drink += 16",
+            "hype += 20",
+            "madness += 4"
+          ]
+        }
+      ]
+    },
+    "question_32": {
+      "id": "question_32",
+      "character": "skinny",
+      "text": "Can you take me down in an arm wrestling contest?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You are viewed as  bully.",
+            "drink += -8",
+            "hype += -12",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message People drop their drinks as they pick up and parade the skinny dude like a winner.",
+            "drink += -20",
+            "hype += 0",
+            "madness += 20"
+          ]
+        }
+      ]
+    },
+    "question_33": {
+      "id": "question_33",
+      "character": "boomer2",
+      "text": "You are everything that is wrong with this generation",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The generation gap is too deep to have a meaningful conversation.",
+            "drink += -12",
+            "hype += -12",
+            "madness += -16"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The generation gap is too deep to have a meaningful conversation.",
+            "drink += -4",
+            "hype += -8",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_34": {
+      "id": "question_34",
+      "character": "dork1",
+      "text": "Do you wanna try DnD drinking games ?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The whole party gets plastered on elven wine and dwarven grog.",
+            "drink += 16",
+            "hype += -12",
+            "madness += 8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Someone hits the dude in the head with a can of beer breaking his glasses.",
+            "drink += 4",
+            "hype += 8",
+            "madness += 12"
+          ]
+        }
+      ]
+    },
+    "question_35": {
+      "id": "question_35",
+      "character": "rockstar",
+      "text": "If you love rock'n'roll  put another dime in the jukebox. Barbara Streisand is next in the queue",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message ",
+            "drink += 0",
+            "hype += -16",
+            "madness += 8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message ",
+            "drink += -8",
+            "hype += -16",
+            "madness += 20"
+          ]
+        }
+      ]
+    },
+    "question_36": {
+      "id": "question_36",
+      "character": "freddy",
+      "text": "Lovely dream of a party you have here. Can little old me join?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message A bunch of people stop drinking and just watch this guy playing five finger fillet with his weird knife fingers",
+            "drink += 20",
+            "hype += -12",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Someone posts a picture with the caption \"the dream guy from rick and morty\"",
+            "drink += -4",
+            "hype += 4",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_37": {
+      "id": "question_37",
+      "character": "50cent",
+      "text": "This sone is from back in my day. Turn it up.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The quality of the track is horrible and the speakers make a deafening noise.",
+            "drink += 4",
+            "hype += -20",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Some trap music starts playing. Skrraa pop pop.",
+            "drink += -8",
+            "hype += 8",
+            "madness += 8"
+          ]
+        }
+      ]
+    },
+    "question_38": {
+      "id": "question_38",
+      "character": "jesus",
+      "text": "Will you deny me, like Peter did?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message This whole party is going to hell.",
+            "drink += 0",
+            "hype += 12",
+            "madness += 16"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Water turns to wine and people start loving their neighbour.",
+            "drink += 20",
+            "hype += 0",
+            "madness += -16"
+          ]
+        }
+      ]
+    },
+    "question_39": {
+      "id": "question_39",
+      "character": "karen",
+      "text": "I have my uncle, the chief of police on the phone, turn the music down. NOW!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Damn lady, take a chill pill",
+            "drink += 0",
+            "hype += -20",
+            "madness += -12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message People drink up, preparing to leave at any moment, but nothing happens.",
+            "drink += -16",
+            "hype += 0",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_40": {
+      "id": "question_40",
+      "character": "karen",
+      "text": "Is there an upper  age restriction to this party?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Young kids keepin' it fresh.",
+            "drink += 12",
+            "hype += -8",
+            "madness += 12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Cougars getting down. The internet shows record searches for the MILF genre ",
+            "drink += -8",
+            "hype += 20",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_41": {
+      "id": "question_41",
+      "character": "marley",
+      "text": "Brother, toss the drinks, they intoxicate you, have the herb, it will elevate you.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Pass the dutchie to the left hand side",
+            "drink += 0",
+            "hype += 12",
+            "madness += -20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Without alternatives, people just drink. Like a lot.",
+            "drink += -20",
+            "hype += -12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_42": {
+      "id": "question_42",
+      "character": "magician",
+      "text": "Want to see a trick?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message poof!",
+            "drink += 0",
+            "hype += -12",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message poof!",
+            "drink += 20",
+            "hype += 12",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_43": {
+      "id": "question_43",
+      "character": "partygirl2 ",
+      "text": "Hold up! Let's all do the mannequin challenge",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The party is stalling but you make reddit front page.",
+            "drink += 4",
+            "hype += 12",
+            "madness += -16"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The party rage on but the influencer chick writes a post how you hate kittens",
+            "drink += 4",
+            "hype += -20",
+            "madness += 16"
+          ]
+        }
+      ]
+    },
+    "question_44": {
+      "id": "question_44",
+      "character": "r2d2",
+      "text": "Help us Party God, you are our only hope!",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message You are taken from the party for a couple of hours to a galaxy far far away where you pray Disney won't sue you for this reference.",
+            "drink += 0",
+            "hype += -16",
+            "madness += -20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Smugglers join the party and turn the little robot into a globe bar. Projector included.",
+            "drink += 8",
+            "hype += 0",
+            "madness += 20"
+          ]
+        }
+      ]
+    },
+    "question_45": {
+      "id": "question_45",
+      "character": "jesus",
+      "text": "Do you keep lent?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Then maybe you should drink and party less.",
+            "drink += -20",
+            "hype += 0",
+            "madness += -8"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You  sling 10 shots while gesturing with your index and pinky finger.",
+            "drink += 20",
+            "hype += 16",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_46": {
+      "id": "question_46",
+      "character": "snoop",
+      "text": "Yo homie, hit this smoke stick right here",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Everyone takes a chill pill, watching nature documentaries and stuffing up on Doritos and peanut butter jelly samwhiches",
+            "drink += -12",
+            "hype += -20",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message Everyone gathers around Snoop to hear his stories about the times you could smoke in-doors, sipping on gin'n'juice.",
+            "drink += 16",
+            "hype += 0",
+            "madness += -20"
+          ]
+        }
+      ]
+    },
+    "question_47": {
+      "id": "question_47",
+      "character": "flint",
+      "text": "*unintelligible punk rock screaming*",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Everybody jumps in a mosh pit.",
+            "drink += 0",
+            "hype += 16",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message You lose 50 respect and everyone calls you a sourpuss.",
+            "drink += 0",
+            "hype += -20",
+            "madness += -12"
+          ]
+        }
+      ]
+    },
+    "question_48": {
+      "id": "question_48",
+      "character": "dwight",
+      "text": "Can I choose the next song?",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message The music bombs with something hard for the ears to translate. All drink to block it out.",
+            "drink += 12",
+            "hype += -16",
+            "madness += 0"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message The starts blocking  doors and lighting fires. Takes half the party to throw him out",
+            "drink += -20",
+            "hype += -20",
+            "madness += 0"
+          ]
+        }
+      ]
+    },
+    "question_49": {
+      "id": "question_49",
+      "character": "tigerking",
+      "text": "Hi there buddy, my husbands and pets are on their way.",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message Rednecks, tigers, gay cowboys, guns and murder plots. You can't write that stuff.",
+            "drink += -4",
+            "hype += 12",
+            "madness += 20"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message No pictures with baby tigers ?!? :(",
+            "drink += 0",
+            "hype += -12",
+            "madness += 8"
+          ]
+        }
+      ]
+    },
+    "question_50": {
+      "id": "question_50",
+      "character": "alien",
+      "text": "We come to see the one called Party God",
+      "choices": [
+        {
+          "text": "yes",
+          "actions": [
+            "message They agree that gifting alcohol to humans was their greatest feat",
+            "drink += -4",
+            "hype += 20",
+            "madness += 12"
+          ]
+        },
+        {
+          "text": "no",
+          "actions": [
+            "message A laser beam vaporizes your icebox.",
+            "drink += -16",
+            "hype += -20",
+            "madness += 8"
           ]
         }
       ]

@@ -248,7 +248,7 @@ def make_question(row):
                 "text": "yes",
                 "actions": [
                     "message " + row["y_message"],
-                    "drink += " + normalize(row["y_drink"]),
+                    "drink += " + normalize(row["y_drinks"]),
                     "hype += " + normalize(row["y_hype"]),
                     "madness += " + normalize(row["y_madness"]),
                 ]
@@ -257,7 +257,7 @@ def make_question(row):
                 "text": "no",
                 "actions": [
                     "message " + row["n_message"],
-                    "drink += " + normalize(row["n_drink"]),
+                    "drink += " + normalize(row["n_drinks"]),
                     "hype += " + normalize(row["n_hype"]),
                     "madness += " + normalize(row["n_madness"]),
                 ]
