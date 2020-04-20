@@ -129,6 +129,7 @@ questions:
       - drink += 0
       - hype += 0
       - madness += 0
+      - add tutorial
       text: 'yes'
     - actions:
       - message Just make sure there's just enough booze, hype and excitement. EVERYONE
@@ -136,7 +137,10 @@ questions:
       - drink += 0
       - hype += 0
       - madness += 0
+      - add tutorial
       text: 'no'
+    conditions:
+    - tutorial absent
     id: question_0
     text: I swear, this is the best. Party. EVER! You just need to bring some more
       people in and keep the party alive. Are you ready?
@@ -146,14 +150,14 @@ questions:
     - actions:
       - message Thank you! UwU
       - drink += 0
-      - hype += 4
-      - madness += -4
+      - hype += 3
+      - madness += -3
       text: 'yes'
     - actions:
       - message You later find out that guy made a douchbag meme with your face
       - drink += 0
-      - hype += -12
-      - madness += -4
+      - hype += -9
+      - madness += -3
       text: 'no'
     id: question_1
     text: Hello Party God, can I attend the party please? I will make you famous on
@@ -165,16 +169,16 @@ questions:
       - message The red outfit is not a costume. The bastard really is Santa, wasted
         after partying with the Easter Bunny. He still has some eggnog and some baggies
         of baking powder.
-      - drink += 16
+      - drink += 12
       - hype += 0
-      - madness += 12
+      - madness += 9
       text: 'yes'
     - actions:
       - message For sure you saved a lot of drinks by not letting that drunk in. On
         the dancefloor, you see people give you the stink eye, thinking you hate Santa.
-      - drink += 8
+      - drink += 6
       - hype += 0
-      - madness += -12
+      - madness += -9
       text: 'no'
     id: question_10
     text: Some red fatso stumbles climbing the steps to your door. He's higher than
@@ -185,13 +189,13 @@ questions:
     - actions:
       - message The guy gets his son out of the party as everyone is booing.
       - drink += 0
-      - hype += -16
-      - madness += -12
+      - hype += -12
+      - madness += -9
       text: 'yes'
     - actions:
       - message The man tries to hide his tears, dropping a sixpack as he leaves.
-      - drink += 8
-      - hype += -12
+      - drink += 6
+      - hype += -9
       - madness += 0
       text: 'no'
     id: question_11
@@ -201,15 +205,15 @@ questions:
     choices:
     - actions:
       - message You handled yourself well, a true Party God
-      - drink += -8
-      - hype += 12
+      - drink += -6
+      - hype += 9
       - madness += 0
       text: 'yes'
     - actions:
       - message The guy does a kegstand then burps the national anthem. A guy with
         an eagle t-shirt sheds a single tear.
-      - drink += -4
-      - hype += 20
+      - drink += -3
+      - hype += 15
       - madness += 0
       text: 'no'
     id: question_12
@@ -219,15 +223,15 @@ questions:
     choices:
     - actions:
       - message Thanks mister, this will give me +3 CHA amonst my own party members.
-      - drink += 16
-      - hype += -8
+      - drink += 12
+      - hype += -6
       - madness += 0
       text: 'yes'
     - actions:
       - message The kid screeches out loudly before cursing you in elvish.
       - drink += 0
-      - hype += -16
-      - madness += 8
+      - hype += -12
+      - madness += 6
       text: 'no'
     id: question_13
     text: 'Dorky kid: Hey mister, got a bunch of booze, can I join?'
@@ -237,15 +241,15 @@ questions:
     - actions:
       - message You're a true warlock, I respect that. 5 models join the party bringing
         a ton of drinks
-      - drink += 12
+      - drink += 9
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'yes'
     - actions:
       - message The actor rolls his eyes, and you feel the weight of the eyes watchig  you.
       - drink += 0
-      - hype += -8
-      - madness += -8
+      - hype += -6
+      - madness += -6
       text: 'no'
     id: question_14
     text: Party God ?! Hah! You?! Dare challenge me?!
@@ -255,14 +259,14 @@ questions:
     - actions:
       - message Oldies hip-hop and thugs shooting their guns. Party like it's 1999.
       - drink += 0
-      - hype += -12
-      - madness += 12
+      - hype += -9
+      - madness += 9
       text: 'yes'
     - actions:
       - message A bunch of gangster looking dudes leave, stealing some of the drinks
-      - drink += -16
+      - drink += -12
       - hype += 0
-      - madness += -12
+      - madness += -9
       text: 'no'
     id: question_15
     text: Yo dawg, can I put on some real gangsta music ?
@@ -271,16 +275,16 @@ questions:
     choices:
     - actions:
       - message The officer seizes some of the booze stored in the garage
-      - drink += -12
-      - hype += -16
+      - drink += -9
+      - hype += -12
       - madness += 0
       text: 'yes'
     - actions:
       - 'message The officer turns out to be a stripper, everybody grabs a chair as
         Joe Cocker starts playing. '
       - drink += 0
-      - hype += 16
-      - madness += -8
+      - hype += 12
+      - madness += -6
       text: 'no'
     id: question_16
     text: 'Officer: Excuse me sir, I need to check your garage, or else, I''m entering
@@ -290,16 +294,16 @@ questions:
     choices:
     - actions:
       - message The woman brings some drinks but immediately asks to see a manager
-      - drink += 12
+      - drink += 9
       - hype += 0
-      - madness += -20
+      - madness += -15
       text: 'yes'
     - actions:
       - message She immediately asks to see a manager. People get a bit angry and
         start drinking to ignore that haircut
-      - drink += -8
+      - drink += -6
       - hype += 0
-      - madness += 12
+      - madness += 9
       text: 'no'
     id: question_17
     text: Hey, can I join? You won't be sorry
@@ -308,15 +312,15 @@ questions:
     choices:
     - actions:
       - message Everybody chants PARTY GOD PARTY GOD
-      - drink += 12
-      - hype += 16
-      - madness += 8
+      - drink += 9
+      - hype += 12
+      - madness += 6
       text: 'yes'
     - actions:
       - message Out of disaproval, people chant DRINKING BUS DRINKING BUS
-      - drink += -12
-      - hype += 4
-      - madness += 12
+      - drink += -9
+      - hype += 3
+      - madness += 9
       text: 'no'
     id: question_18
     text: Party bus for PARTY GOD!
@@ -325,15 +329,15 @@ questions:
     choices:
     - actions:
       - message Some people question you are the Party God
-      - drink += -12
-      - hype += -8
-      - madness += 12
+      - drink += -9
+      - hype += -6
+      - madness += 9
       text: 'yes'
     - actions:
       - message His name is *trumpets playing* PARTY GOD
       - drink += 0
-      - hype += 20
-      - madness += 4
+      - hype += 15
+      - madness += 3
       text: 'no'
     id: question_19
     text: A true Party God can see me. Can you pretend you don't ?
@@ -342,15 +346,15 @@ questions:
     choices:
     - actions:
       - message boobs :)
-      - drink += -12
+      - drink += -9
       - hype += 0
-      - madness += 8
+      - madness += 6
       text: 'yes'
     - actions:
       - message Someone from the crowd shouts "virgin!"
       - drink += 0
-      - hype += -4
-      - madness += -4
+      - hype += -3
+      - madness += -3
       text: 'no'
     id: question_2
     text: 'Hey stranger, what must a girl do around here to get a drink?? Maybe #nobrachallenge?'
@@ -359,15 +363,15 @@ questions:
     choices:
     - actions:
       - message Your party now holds 10% of the world armaments
-      - drink += -8
+      - drink += -6
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'yes'
     - actions:
       - message Keep your drinks, you were never cool.
-      - drink += 16
+      - drink += 12
       - hype += 0
-      - madness += -8
+      - madness += -6
       text: 'no'
     id: question_20
     text: Hey slick, toss a drink this way won't you, and I might just join in on
@@ -378,14 +382,14 @@ questions:
     - actions:
       - message Crossfire has never looked so good
       - drink += 0
-      - hype += 20
-      - madness += -8
+      - hype += 15
+      - madness += -6
       text: 'yes'
     - actions:
       - message You heard guns locking, cocking, safeties off.
       - drink += 0
-      - hype += 8
-      - madness += 16
+      - hype += 6
+      - madness += 12
       text: 'no'
     id: question_21
     text: 'points to portable HDD: I''ve got HL3 on this baby, who''s in?'
@@ -395,14 +399,14 @@ questions:
     - actions:
       - message The mime joins the party, creeping everyone out.
       - drink += 0
-      - hype += -20
-      - madness += -8
+      - hype += -15
+      - madness += -6
       text: 'yes'
     - actions:
       - message The mime joins the party, creeping everyone out.
-      - drink += -4
-      - hype += -12
-      - madness += 8
+      - drink += -3
+      - hype += -9
+      - madness += 6
       text: 'no'
     id: question_22
     text: The mime pulls the edges of his mouth with his fingers, then points at the
@@ -412,15 +416,15 @@ questions:
     choices:
     - actions:
       - message Punk's not dead!
-      - drink += -12
+      - drink += -9
       - hype += 0
-      - madness += 16
+      - madness += 12
       text: 'yes'
     - actions:
       - message You just dropkicked the Murphies.
-      - drink += 20
+      - drink += 15
       - hype += 0
-      - madness += -4
+      - madness += -3
       text: 'no'
     id: question_23
     text: Yo, my friends are on their way
@@ -430,14 +434,14 @@ questions:
     - actions:
       - message The dog does a double backflip. Everyone is stunned
       - drink += 0
-      - hype += 16
-      - madness += -8
+      - hype += 12
+      - madness += -6
       text: 'yes'
     - actions:
       - message The dog makes the big puppy eyes. Everyone goes "awww"
-      - drink += 12
+      - drink += 9
       - hype += 0
-      - madness += -20
+      - madness += -15
       text: 'no'
     id: question_24
     text: Woof Woof
@@ -447,15 +451,15 @@ questions:
     - actions:
       - message You feel a sharp taste of gasoline and you black out for a couple
         of minutes
-      - drink += 16
+      - drink += 12
       - hype += 0
-      - madness += -8
+      - madness += -6
       text: 'yes'
     - actions:
       - message You take a step back and Chad lights up the shots like he's seen on
         TikTok. They blow up taking Chad's eyebrows along.
-      - drink += -12
-      - hype += -20
+      - drink += -9
+      - hype += -15
       - madness += 0
       text: 'no'
     id: question_25
@@ -466,16 +470,16 @@ questions:
     - actions:
       - message You drink somethink called Ocare, tasty, halucinating, but with a
         faint taste of socialism
-      - drink += 20
-      - hype += -4
+      - drink += 15
+      - hype += -3
       - madness += 0
       text: 'yes'
     - actions:
       - message Defying the former president makes some nutjobs with red hats to start
         screeching.
       - drink += 0
-      - hype += 16
-      - madness += 16
+      - hype += 12
+      - madness += 12
       text: 'no'
     id: question_26
     text: It is my opinion that every law abiding citizen will take a shot to keep
@@ -486,15 +490,15 @@ questions:
     - actions:
       - message Three seconds of silence as everyone is in awe. Then everybody goes
         crazy.
-      - drink += 12
-      - hype += 20
+      - drink += 9
+      - hype += 15
       - madness += 0
       text: 'yes'
     - actions:
       - 'message '
       - drink += 0
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'no'
     id: question_27
     text: Do you think you are worthy for me to abide you being a Party God?
@@ -503,15 +507,15 @@ questions:
     choices:
     - actions:
       - message Drugs are bad, mmkay, a lot of people get really mad
-      - drink += -12
+      - drink += -9
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'yes'
     - actions:
       - message The fumes of alcohol keep the party hype burning and the spirits high.
-      - drink += 16
+      - drink += 12
       - hype += 0
-      - madness += 12
+      - madness += 9
       text: 'no'
     id: question_28
     text: Drinks are sooo lame. Can I pass some of my product in this party?.
@@ -521,14 +525,14 @@ questions:
     - actions:
       - 'message Everybody does this realizing they''re throwing bottles of booze
         over their shoulders. '
-      - drink += -12
-      - hype += -20
+      - drink += -9
+      - hype += -15
       - madness += 0
       text: 'yes'
     - actions:
       - message Mimes suck. Drink up is the new party anthem
-      - drink += 16
-      - hype += 12
+      - drink += 12
+      - hype += 9
       - madness += 0
       text: 'no'
     id: question_29
@@ -541,13 +545,13 @@ questions:
       - message 2 sad emojis and a report. Your grandma commented "I raised you better
         than this"
       - drink += 0
-      - hype += -8
+      - hype += -6
       - madness += 0
       text: 'yes'
     - actions:
       - message Posts of shots and girls having flood Instadrank. You are famous
-      - drink += 12
-      - hype += 16
+      - drink += 9
+      - hype += 12
       - madness += 0
       text: 'no'
     id: question_3
@@ -557,15 +561,15 @@ questions:
     choices:
     - actions:
       - message You made Satan cry.
-      - drink += -12
+      - drink += -9
       - hype += 0
-      - madness += -12
+      - madness += -9
       text: 'yes'
     - actions:
       - message The flames of hell, sulfur and brimstone liven up the party.
       - drink += 0
-      - hype += 16
-      - madness += 20
+      - hype += 12
+      - madness += 15
       text: 'no'
     id: question_30
     text: Is your soul more important than keeping this party alive?
@@ -575,15 +579,15 @@ questions:
     - actions:
       - message Michelle comes and gives a lecture on fintess and how drinking is
         not good.
-      - drink += -16
-      - hype += -4
-      - madness += 4
+      - drink += -12
+      - hype += -3
+      - madness += 3
       text: 'yes'
     - actions:
       - 'message The former president pours a line of shots called "the Hussein". '
-      - drink += 16
-      - hype += 20
-      - madness += 4
+      - drink += 12
+      - hype += 15
+      - madness += 3
       text: 'no'
     id: question_31
     text: Should I call my wife over?
@@ -592,16 +596,16 @@ questions:
     choices:
     - actions:
       - message You are viewed as  bully.
-      - drink += -8
-      - hype += -12
+      - drink += -6
+      - hype += -9
       - madness += 0
       text: 'yes'
     - actions:
       - message People drop their drinks as they pick up and parade the skinny dude
         like a winner.
-      - drink += -20
+      - drink += -15
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'no'
     id: question_32
     text: Can you take me down in an arm wrestling contest?
@@ -610,15 +614,15 @@ questions:
     choices:
     - actions:
       - message The generation gap is too deep to have a meaningful conversation.
-      - drink += -12
-      - hype += -12
-      - madness += -16
+      - drink += -9
+      - hype += -9
+      - madness += -12
       text: 'yes'
     - actions:
       - message The generation gap is too deep to have a meaningful conversation.
-      - drink += -4
-      - hype += -8
-      - madness += 16
+      - drink += -3
+      - hype += -6
+      - madness += 12
       text: 'no'
     id: question_33
     text: You are everything that is wrong with this generation
@@ -627,16 +631,16 @@ questions:
     choices:
     - actions:
       - message The whole party gets plastered on elven wine and dwarven grog.
-      - drink += 16
-      - hype += -12
-      - madness += 8
+      - drink += 12
+      - hype += -9
+      - madness += 6
       text: 'yes'
     - actions:
       - message Someone hits the dude in the head with a can of beer breaking his
         glasses.
-      - drink += 4
-      - hype += 8
-      - madness += 12
+      - drink += 3
+      - hype += 6
+      - madness += 9
       text: 'no'
     id: question_34
     text: Do you wanna try DnD drinking games ?
@@ -644,35 +648,35 @@ questions:
     character: rockstar
     choices:
     - actions:
-      - 'message '
+      - message Oldschool rock'n'roll gets everyone jumping, just doesn't get enough
+        internet points
       - drink += 0
-      - hype += -16
-      - madness += 8
+      - hype += -12
+      - madness += 6
       text: 'yes'
     - actions:
-      - 'message '
-      - drink += -8
-      - hype += -16
-      - madness += 20
+      - 'message Whatever the kids are listening to these days '
+      - drink += -6
+      - hype += 6
+      - madness += 15
       text: 'no'
     id: question_35
-    text: If you love rock'n'roll  put another dime in the jukebox. Barbara Streisand
-      is next in the queue
+    text: This party is bombing. Should we take it to the next level??
   question_36:
     character: freddy
     choices:
     - actions:
       - message A bunch of people stop drinking and just watch this guy playing five
         finger fillet with his weird knife fingers
-      - drink += 20
-      - hype += -12
-      - madness += 20
+      - drink += 15
+      - hype += -9
+      - madness += 15
       text: 'yes'
     - actions:
       - message Someone posts a picture with the caption "the dream guy from rick
         and morty"
-      - drink += -4
-      - hype += 4
+      - drink += -3
+      - hype += 3
       - madness += 0
       text: 'no'
     id: question_36
@@ -683,15 +687,15 @@ questions:
     - actions:
       - message The quality of the track is horrible and the speakers make a deafening
         noise.
-      - drink += 4
-      - hype += -20
+      - drink += 3
+      - hype += -15
       - madness += 0
       text: 'yes'
     - actions:
       - message Some trap music starts playing. Skrraa pop pop.
-      - drink += -8
-      - hype += 8
-      - madness += 8
+      - drink += -6
+      - hype += 6
+      - madness += 6
       text: 'no'
     id: question_37
     text: This sone is from back in my day. Turn it up.
@@ -701,14 +705,14 @@ questions:
     - actions:
       - message This whole party is going to hell.
       - drink += 0
-      - hype += 12
-      - madness += 16
+      - hype += 9
+      - madness += 12
       text: 'yes'
     - actions:
       - message Water turns to wine and people start loving their neighbour.
-      - drink += 20
+      - drink += 15
       - hype += 0
-      - madness += -16
+      - madness += -12
       text: 'no'
     id: question_38
     text: Will you deny me, like Peter did?
@@ -718,14 +722,14 @@ questions:
     - actions:
       - message Damn lady, take a chill pill
       - drink += 0
-      - hype += -20
-      - madness += -12
+      - hype += -15
+      - madness += -9
       text: 'yes'
     - actions:
       - message People drink up, preparing to leave at any moment, but nothing happens.
-      - drink += -16
+      - drink += -12
       - hype += 0
-      - madness += 16
+      - madness += 12
       text: 'no'
     id: question_39
     text: I have my uncle, the chief of police on the phone, turn the music down.
@@ -737,14 +741,14 @@ questions:
       - message A headless rooster running through the yard is not really the best
         party treat
       - drink += 0
-      - hype += -16
-      - madness += -8
+      - hype += -12
+      - madness += -6
       text: 'yes'
     - actions:
       - 'message A rooster jumps on the dance floor and a new viral dance move picks
         up. #roosterchallenge'
       - drink += 0
-      - hype += 12
+      - hype += 9
       - madness += 0
       text: 'no'
     id: question_4
@@ -754,16 +758,16 @@ questions:
     choices:
     - actions:
       - message Young kids keepin' it fresh.
-      - drink += 12
-      - hype += -8
-      - madness += 12
+      - drink += 9
+      - hype += -6
+      - madness += 9
       text: 'yes'
     - actions:
       - 'message Cougars getting down. The internet shows record searches for the
         MILF genre '
-      - drink += -8
-      - hype += 20
-      - madness += 16
+      - drink += -6
+      - hype += 15
+      - madness += 12
       text: 'no'
     id: question_40
     text: Is there an upper  age restriction to this party?
@@ -773,13 +777,13 @@ questions:
     - actions:
       - message Pass the dutchie to the left hand side
       - drink += 0
-      - hype += 12
-      - madness += -20
+      - hype += 9
+      - madness += -15
       text: 'yes'
     - actions:
       - message Without alternatives, people just drink. Like a lot.
-      - drink += -20
-      - hype += -12
+      - drink += -15
+      - hype += -9
       - madness += 0
       text: 'no'
     id: question_41
@@ -791,13 +795,13 @@ questions:
     - actions:
       - message poof!
       - drink += 0
-      - hype += -12
-      - madness += 20
+      - hype += -9
+      - madness += 15
       text: 'yes'
     - actions:
       - message poof!
-      - drink += 20
-      - hype += 12
+      - drink += 15
+      - hype += 9
       - madness += 0
       text: 'no'
     id: question_42
@@ -807,16 +811,16 @@ questions:
     choices:
     - actions:
       - message The party is stalling but you make reddit front page.
-      - drink += 4
-      - hype += 12
-      - madness += -16
+      - drink += 3
+      - hype += 9
+      - madness += -12
       text: 'yes'
     - actions:
       - message The party rage on but the influencer chick writes a post how you hate
         kittens
-      - drink += 4
-      - hype += -20
-      - madness += 16
+      - drink += 3
+      - hype += -15
+      - madness += 12
       text: 'no'
     id: question_43
     text: Hold up! Let's all do the mannequin challenge
@@ -827,15 +831,15 @@ questions:
       - message You are taken from the party for a couple of hours to a galaxy far
         far away where you pray Disney won't sue you for this reference.
       - drink += 0
-      - hype += -16
-      - madness += -20
+      - hype += -12
+      - madness += -15
       text: 'yes'
     - actions:
       - message Smugglers join the party and turn the little robot into a globe bar.
         Projector included.
-      - drink += 8
+      - drink += 6
       - hype += 0
-      - madness += 20
+      - madness += 15
       text: 'no'
     id: question_44
     text: Help us Party God, you are our only hope!
@@ -844,14 +848,14 @@ questions:
     choices:
     - actions:
       - message Then maybe you should drink and party less.
-      - drink += -20
+      - drink += -15
       - hype += 0
-      - madness += -8
+      - madness += -6
       text: 'yes'
     - actions:
       - message You  sling 10 shots while gesturing with your index and pinky finger.
-      - drink += 20
-      - hype += 16
+      - drink += 15
+      - hype += 12
       - madness += 0
       text: 'no'
     id: question_45
@@ -862,16 +866,16 @@ questions:
     - actions:
       - message Everyone takes a chill pill, watching nature documentaries and stuffing
         up on Doritos and peanut butter jelly samwhiches
-      - drink += -12
-      - hype += -20
+      - drink += -9
+      - hype += -15
       - madness += 0
       text: 'yes'
     - actions:
       - message Everyone gathers around Snoop to hear his stories about the times
         you could smoke in-doors, sipping on gin'n'juice.
-      - drink += 16
+      - drink += 12
       - hype += 0
-      - madness += -20
+      - madness += -15
       text: 'no'
     id: question_46
     text: Yo homie, hit this smoke stick right here
@@ -881,14 +885,14 @@ questions:
     - actions:
       - message Everybody jumps in a mosh pit.
       - drink += 0
-      - hype += 16
-      - madness += 20
+      - hype += 12
+      - madness += 15
       text: 'yes'
     - actions:
       - message You lose 50 respect and everyone calls you a sourpuss.
       - drink += 0
-      - hype += -20
-      - madness += -12
+      - hype += -15
+      - madness += -9
       text: 'no'
     id: question_47
     text: '*unintelligible punk rock screaming*'
@@ -898,15 +902,15 @@ questions:
     - actions:
       - message The music bombs with something hard for the ears to translate. All
         drink to block it out.
-      - drink += 12
-      - hype += -16
+      - drink += 9
+      - hype += -12
       - madness += 0
       text: 'yes'
     - actions:
-      - message The starts blocking  doors and lighting fires. Takes half the party
-        to throw him out
-      - drink += -20
-      - hype += -20
+      - message The dude starts blocking doors and lighting fires. Takes half the
+        party to throw him out
+      - drink += -15
+      - hype += -15
       - madness += 0
       text: 'no'
     id: question_48
@@ -917,15 +921,15 @@ questions:
     - actions:
       - message Rednecks, tigers, gay cowboys, guns and murder plots. You can't write
         that stuff.
-      - drink += -4
-      - hype += 12
-      - madness += 20
+      - drink += -3
+      - hype += 9
+      - madness += 15
       text: 'yes'
     - actions:
       - message No pictures with baby tigers ?!? :(
       - drink += 0
-      - hype += -12
-      - madness += 8
+      - hype += -9
+      - madness += 6
       text: 'no'
     id: question_49
     text: Hi there buddy, my husbands and pets are on their way.
@@ -935,14 +939,14 @@ questions:
     - actions:
       - message Who knew tapeworm booze would be so intoxicating? A couple of guests
         fainted thought.
-      - drink += 12
+      - drink += 9
       - hype += 0
-      - madness += -8
+      - madness += -6
       text: 'yes'
     - actions:
       - message The old dude draws a square shape with his middle fingers.
-      - drink += -16
-      - hype += 4
+      - drink += -12
+      - hype += 3
       - madness += 0
       text: 'no'
     id: question_5
@@ -953,15 +957,15 @@ questions:
     choices:
     - actions:
       - message They agree that gifting alcohol to humans was their greatest feat
-      - drink += -4
-      - hype += 20
-      - madness += 12
+      - drink += -3
+      - hype += 15
+      - madness += 9
       text: 'yes'
     - actions:
       - message A laser beam vaporizes your icebox.
-      - drink += -16
-      - hype += -20
-      - madness += 8
+      - drink += -12
+      - hype += -15
+      - madness += 6
       text: 'no'
     id: question_50
     text: We come to see the one called Party God
@@ -971,16 +975,16 @@ questions:
     - actions:
       - 'message Officer: Yes, meow, we''ll just settle confiscating this here booze
         meow, just keep it quiet.'
-      - drink += -16
+      - drink += -12
       - hype += 0
-      - madness += -8
+      - madness += -6
       text: 'yes'
     - actions:
       - message Exercising your citizen rights turned the cops around. Out of spite
         they knocked over a keg.
-      - drink += -12
+      - drink += -9
       - hype += 0
-      - madness += -4
+      - madness += -3
       text: 'no'
     id: question_6
     text: 'Officer: Hello meow, we have a noise complaint, do you mind if we take
@@ -991,15 +995,15 @@ questions:
     - actions:
       - 'message The cowboy drinks a bottle of whiskey without a breath of air, and
         starts shooting his gun. Yeeehaw!! '
-      - drink += -8
+      - drink += -6
       - hype += 0
-      - madness += 16
+      - madness += 12
       text: 'yes'
     - actions:
       - message The cowboy spits his chewing tabacco on the blue sway shoes of a trap
         artist/influencer/big pharma promoter.
-      - drink += 4
-      - hype += -12
+      - drink += 3
+      - hype += -9
       - madness += 0
       text: 'no'
     id: question_7
@@ -1009,14 +1013,14 @@ questions:
     choices:
     - actions:
       - 'message Hint: Bee Gees'' Staying Alive has the perfect rhythm for CPR'
-      - drink += 4
+      - drink += 3
       - hype += 0
-      - madness += 4
+      - madness += 3
       text: 'yes'
     - actions:
       - message The next song is Tequilla, and everybody does shots
-      - drink += -20
-      - hype += 8
+      - drink += -15
+      - hype += 6
       - madness += 0
       text: 'no'
     id: question_8
@@ -1028,16 +1032,16 @@ questions:
     - actions:
       - 'message A really hot girl hops on the table and WHAM. Hits the floor knocked
         down by the ceiling fan. More drinks for the rest I guess. '
-      - drink += 12
-      - hype += -12
+      - drink += 9
+      - hype += -9
       - madness += 0
       text: 'yes'
     - actions:
       - 'message With total disregard for your sexist censorship, a whole group of
         strong independent women take their tops off. F the patriarchy. '
       - drink += 0
-      - hype += 12
-      - madness += 8
+      - hype += 9
+      - madness += 6
       text: 'no'
     id: question_9
     text: People are asking for a wet t-shirt contest, what do you say?

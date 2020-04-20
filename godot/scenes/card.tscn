@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/graphics/Cards/card_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/Characters/icon_r2d2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/card.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/font_question.tres" type="DynamicFont" id=4]
 [ext_resource path="res://assets/fonts/font_character_name.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/graphics/Metrics/icons/icon_drink.png" type="Texture" id=6]
 
 [node name="card" type="Node2D"]
 script = ExtResource( 3 )
@@ -52,19 +53,51 @@ margin_right = 312.327
 margin_bottom = 364.99
 custom_fonts/font = ExtResource( 4 )
 text = "Tothetuho"
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="metric_1" type="Sprite" parent="btn_choice_1"]
+position = Vector2( 232, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="metric_2" type="Sprite" parent="btn_choice_1"]
+position = Vector2( 200, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="metric_3" type="Sprite" parent="btn_choice_1"]
+position = Vector2( 168, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
 [node name="btn_choice_2" type="Button" parent="."]
 margin_left = 54.3273
-margin_top = 379.99
+margin_top = 378.99
 margin_right = 312.327
-margin_bottom = 421.99
+margin_bottom = 420.99
 custom_fonts/font = ExtResource( 4 )
 text = "Tothetuho"
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="metric_1" type="Sprite" parent="btn_choice_2"]
+position = Vector2( 232, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="metric_2" type="Sprite" parent="btn_choice_2"]
+position = Vector2( 200, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="metric_3" type="Sprite" parent="btn_choice_2"]
+position = Vector2( 168, 21 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="btn_choice_1" to="." method="_on_btn_choice_1_pressed"]
 [connection signal="pressed" from="btn_choice_2" to="." method="_on_btn_choice_2_pressed"]

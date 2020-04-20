@@ -231,7 +231,8 @@
             "message Hell ya!!! Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You're a Party God!",
             "drink += 0",
             "hype += 0",
-            "madness += 0"
+            "madness += 0",
+            "add tutorial"
           ]
         },
         {
@@ -240,9 +241,13 @@
             "message Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You got this, you're a Party God!",
             "drink += 0",
             "hype += 0",
-            "madness += 0"
+            "madness += 0",
+            "add tutorial"
           ]
         }
+      ],
+      "conditions": [
+        "tutorial absent"
       ]
     },
     "question_1": {
@@ -255,8 +260,8 @@
           "actions": [
             "message Thank you! UwU",
             "drink += 0",
-            "hype += 4",
-            "madness += -4"
+            "hype += 3",
+            "madness += -3"
           ]
         },
         {
@@ -264,8 +269,8 @@
           "actions": [
             "message You later find out that guy made a douchbag meme with your face",
             "drink += 0",
-            "hype += -12",
-            "madness += -4"
+            "hype += -9",
+            "madness += -3"
           ]
         }
       ]
@@ -279,9 +284,9 @@
           "text": "yes",
           "actions": [
             "message boobs :)",
-            "drink += -12",
+            "drink += -9",
             "hype += 0",
-            "madness += 8"
+            "madness += 6"
           ]
         },
         {
@@ -289,8 +294,8 @@
           "actions": [
             "message Someone from the crowd shouts \"virgin!\"",
             "drink += 0",
-            "hype += -4",
-            "madness += -4"
+            "hype += -3",
+            "madness += -3"
           ]
         }
       ]
@@ -305,7 +310,7 @@
           "actions": [
             "message 2 sad emojis and a report. Your grandma commented \"I raised you better than this\"",
             "drink += 0",
-            "hype += -8",
+            "hype += -6",
             "madness += 0"
           ]
         },
@@ -313,8 +318,8 @@
           "text": "no",
           "actions": [
             "message Posts of shots and girls having flood Instadrank. You are famous",
-            "drink += 12",
-            "hype += 16",
+            "drink += 9",
+            "hype += 12",
             "madness += 0"
           ]
         }
@@ -330,8 +335,8 @@
           "actions": [
             "message A headless rooster running through the yard is not really the best party treat",
             "drink += 0",
-            "hype += -16",
-            "madness += -8"
+            "hype += -12",
+            "madness += -6"
           ]
         },
         {
@@ -339,7 +344,7 @@
           "actions": [
             "message A rooster jumps on the dance floor and a new viral dance move picks up. #roosterchallenge",
             "drink += 0",
-            "hype += 12",
+            "hype += 9",
             "madness += 0"
           ]
         }
@@ -354,17 +359,17 @@
           "text": "yes",
           "actions": [
             "message Who knew tapeworm booze would be so intoxicating? A couple of guests fainted thought.",
-            "drink += 12",
+            "drink += 9",
             "hype += 0",
-            "madness += -8"
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The old dude draws a square shape with his middle fingers.",
-            "drink += -16",
-            "hype += 4",
+            "drink += -12",
+            "hype += 3",
             "madness += 0"
           ]
         }
@@ -379,18 +384,18 @@
           "text": "yes",
           "actions": [
             "message Officer: Yes, meow, we'll just settle confiscating this here booze meow, just keep it quiet.",
-            "drink += -16",
+            "drink += -12",
             "hype += 0",
-            "madness += -8"
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Exercising your citizen rights turned the cops around. Out of spite they knocked over a keg.",
-            "drink += -12",
+            "drink += -9",
             "hype += 0",
-            "madness += -4"
+            "madness += -3"
           ]
         }
       ]
@@ -404,17 +409,17 @@
           "text": "yes",
           "actions": [
             "message The cowboy drinks a bottle of whiskey without a breath of air, and starts shooting his gun. Yeeehaw!! ",
-            "drink += -8",
+            "drink += -6",
             "hype += 0",
-            "madness += 16"
+            "madness += 12"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The cowboy spits his chewing tabacco on the blue sway shoes of a trap artist/influencer/big pharma promoter.",
-            "drink += 4",
-            "hype += -12",
+            "drink += 3",
+            "hype += -9",
             "madness += 0"
           ]
         }
@@ -429,17 +434,17 @@
           "text": "yes",
           "actions": [
             "message Hint: Bee Gees' Staying Alive has the perfect rhythm for CPR",
-            "drink += 4",
+            "drink += 3",
             "hype += 0",
-            "madness += 4"
+            "madness += 3"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The next song is Tequilla, and everybody does shots",
-            "drink += -20",
-            "hype += 8",
+            "drink += -15",
+            "hype += 6",
             "madness += 0"
           ]
         }
@@ -454,8 +459,8 @@
           "text": "yes",
           "actions": [
             "message A really hot girl hops on the table and WHAM. Hits the floor knocked down by the ceiling fan. More drinks for the rest I guess. ",
-            "drink += 12",
-            "hype += -12",
+            "drink += 9",
+            "hype += -9",
             "madness += 0"
           ]
         },
@@ -464,8 +469,8 @@
           "actions": [
             "message With total disregard for your sexist censorship, a whole group of strong independent women take their tops off. F the patriarchy. ",
             "drink += 0",
-            "hype += 12",
-            "madness += 8"
+            "hype += 9",
+            "madness += 6"
           ]
         }
       ]
@@ -479,18 +484,18 @@
           "text": "yes",
           "actions": [
             "message The red outfit is not a costume. The bastard really is Santa, wasted after partying with the Easter Bunny. He still has some eggnog and some baggies of baking powder.",
-            "drink += 16",
+            "drink += 12",
             "hype += 0",
-            "madness += 12"
+            "madness += 9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message For sure you saved a lot of drinks by not letting that drunk in. On the dancefloor, you see people give you the stink eye, thinking you hate Santa.",
-            "drink += 8",
+            "drink += 6",
             "hype += 0",
-            "madness += -12"
+            "madness += -9"
           ]
         }
       ]
@@ -505,16 +510,16 @@
           "actions": [
             "message The guy gets his son out of the party as everyone is booing.",
             "drink += 0",
-            "hype += -16",
-            "madness += -12"
+            "hype += -12",
+            "madness += -9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The man tries to hide his tears, dropping a sixpack as he leaves.",
-            "drink += 8",
-            "hype += -12",
+            "drink += 6",
+            "hype += -9",
             "madness += 0"
           ]
         }
@@ -529,8 +534,8 @@
           "text": "yes",
           "actions": [
             "message You handled yourself well, a true Party God",
-            "drink += -8",
-            "hype += 12",
+            "drink += -6",
+            "hype += 9",
             "madness += 0"
           ]
         },
@@ -538,8 +543,8 @@
           "text": "no",
           "actions": [
             "message The guy does a kegstand then burps the national anthem. A guy with an eagle t-shirt sheds a single tear.",
-            "drink += -4",
-            "hype += 20",
+            "drink += -3",
+            "hype += 15",
             "madness += 0"
           ]
         }
@@ -554,8 +559,8 @@
           "text": "yes",
           "actions": [
             "message Thanks mister, this will give me +3 CHA amonst my own party members.",
-            "drink += 16",
-            "hype += -8",
+            "drink += 12",
+            "hype += -6",
             "madness += 0"
           ]
         },
@@ -564,8 +569,8 @@
           "actions": [
             "message The kid screeches out loudly before cursing you in elvish.",
             "drink += 0",
-            "hype += -16",
-            "madness += 8"
+            "hype += -12",
+            "madness += 6"
           ]
         }
       ]
@@ -579,9 +584,9 @@
           "text": "yes",
           "actions": [
             "message You're a true warlock, I respect that. 5 models join the party bringing a ton of drinks",
-            "drink += 12",
+            "drink += 9",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         },
         {
@@ -589,8 +594,8 @@
           "actions": [
             "message The actor rolls his eyes, and you feel the weight of the eyes watchig  you.",
             "drink += 0",
-            "hype += -8",
-            "madness += -8"
+            "hype += -6",
+            "madness += -6"
           ]
         }
       ]
@@ -605,17 +610,17 @@
           "actions": [
             "message Oldies hip-hop and thugs shooting their guns. Party like it's 1999.",
             "drink += 0",
-            "hype += -12",
-            "madness += 12"
+            "hype += -9",
+            "madness += 9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message A bunch of gangster looking dudes leave, stealing some of the drinks",
-            "drink += -16",
+            "drink += -12",
             "hype += 0",
-            "madness += -12"
+            "madness += -9"
           ]
         }
       ]
@@ -629,8 +634,8 @@
           "text": "yes",
           "actions": [
             "message The officer seizes some of the booze stored in the garage",
-            "drink += -12",
-            "hype += -16",
+            "drink += -9",
+            "hype += -12",
             "madness += 0"
           ]
         },
@@ -639,8 +644,8 @@
           "actions": [
             "message The officer turns out to be a stripper, everybody grabs a chair as Joe Cocker starts playing. ",
             "drink += 0",
-            "hype += 16",
-            "madness += -8"
+            "hype += 12",
+            "madness += -6"
           ]
         }
       ]
@@ -654,18 +659,18 @@
           "text": "yes",
           "actions": [
             "message The woman brings some drinks but immediately asks to see a manager",
-            "drink += 12",
+            "drink += 9",
             "hype += 0",
-            "madness += -20"
+            "madness += -15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message She immediately asks to see a manager. People get a bit angry and start drinking to ignore that haircut",
-            "drink += -8",
+            "drink += -6",
             "hype += 0",
-            "madness += 12"
+            "madness += 9"
           ]
         }
       ]
@@ -679,18 +684,18 @@
           "text": "yes",
           "actions": [
             "message Everybody chants PARTY GOD PARTY GOD",
-            "drink += 12",
-            "hype += 16",
-            "madness += 8"
+            "drink += 9",
+            "hype += 12",
+            "madness += 6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Out of disaproval, people chant DRINKING BUS DRINKING BUS",
-            "drink += -12",
-            "hype += 4",
-            "madness += 12"
+            "drink += -9",
+            "hype += 3",
+            "madness += 9"
           ]
         }
       ]
@@ -704,9 +709,9 @@
           "text": "yes",
           "actions": [
             "message Some people question you are the Party God",
-            "drink += -12",
-            "hype += -8",
-            "madness += 12"
+            "drink += -9",
+            "hype += -6",
+            "madness += 9"
           ]
         },
         {
@@ -714,8 +719,8 @@
           "actions": [
             "message His name is *trumpets playing* PARTY GOD",
             "drink += 0",
-            "hype += 20",
-            "madness += 4"
+            "hype += 15",
+            "madness += 3"
           ]
         }
       ]
@@ -729,18 +734,18 @@
           "text": "yes",
           "actions": [
             "message Your party now holds 10% of the world armaments",
-            "drink += -8",
+            "drink += -6",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Keep your drinks, you were never cool.",
-            "drink += 16",
+            "drink += 12",
             "hype += 0",
-            "madness += -8"
+            "madness += -6"
           ]
         }
       ]
@@ -755,8 +760,8 @@
           "actions": [
             "message Crossfire has never looked so good",
             "drink += 0",
-            "hype += 20",
-            "madness += -8"
+            "hype += 15",
+            "madness += -6"
           ]
         },
         {
@@ -764,8 +769,8 @@
           "actions": [
             "message You heard guns locking, cocking, safeties off.",
             "drink += 0",
-            "hype += 8",
-            "madness += 16"
+            "hype += 6",
+            "madness += 12"
           ]
         }
       ]
@@ -780,17 +785,17 @@
           "actions": [
             "message The mime joins the party, creeping everyone out.",
             "drink += 0",
-            "hype += -20",
-            "madness += -8"
+            "hype += -15",
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The mime joins the party, creeping everyone out.",
-            "drink += -4",
-            "hype += -12",
-            "madness += 8"
+            "drink += -3",
+            "hype += -9",
+            "madness += 6"
           ]
         }
       ]
@@ -804,18 +809,18 @@
           "text": "yes",
           "actions": [
             "message Punk's not dead!",
-            "drink += -12",
+            "drink += -9",
             "hype += 0",
-            "madness += 16"
+            "madness += 12"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message You just dropkicked the Murphies.",
-            "drink += 20",
+            "drink += 15",
             "hype += 0",
-            "madness += -4"
+            "madness += -3"
           ]
         }
       ]
@@ -830,17 +835,17 @@
           "actions": [
             "message The dog does a double backflip. Everyone is stunned",
             "drink += 0",
-            "hype += 16",
-            "madness += -8"
+            "hype += 12",
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The dog makes the big puppy eyes. Everyone goes \"awww\"",
-            "drink += 12",
+            "drink += 9",
             "hype += 0",
-            "madness += -20"
+            "madness += -15"
           ]
         }
       ]
@@ -854,17 +859,17 @@
           "text": "yes",
           "actions": [
             "message You feel a sharp taste of gasoline and you black out for a couple of minutes",
-            "drink += 16",
+            "drink += 12",
             "hype += 0",
-            "madness += -8"
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message You take a step back and Chad lights up the shots like he's seen on TikTok. They blow up taking Chad's eyebrows along.",
-            "drink += -12",
-            "hype += -20",
+            "drink += -9",
+            "hype += -15",
             "madness += 0"
           ]
         }
@@ -879,8 +884,8 @@
           "text": "yes",
           "actions": [
             "message You drink somethink called Ocare, tasty, halucinating, but with a faint taste of socialism",
-            "drink += 20",
-            "hype += -4",
+            "drink += 15",
+            "hype += -3",
             "madness += 0"
           ]
         },
@@ -889,8 +894,8 @@
           "actions": [
             "message Defying the former president makes some nutjobs with red hats to start screeching.",
             "drink += 0",
-            "hype += 16",
-            "madness += 16"
+            "hype += 12",
+            "madness += 12"
           ]
         }
       ]
@@ -904,8 +909,8 @@
           "text": "yes",
           "actions": [
             "message Three seconds of silence as everyone is in awe. Then everybody goes crazy.",
-            "drink += 12",
-            "hype += 20",
+            "drink += 9",
+            "hype += 15",
             "madness += 0"
           ]
         },
@@ -915,7 +920,7 @@
             "message ",
             "drink += 0",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         }
       ]
@@ -929,18 +934,18 @@
           "text": "yes",
           "actions": [
             "message Drugs are bad, mmkay, a lot of people get really mad",
-            "drink += -12",
+            "drink += -9",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The fumes of alcohol keep the party hype burning and the spirits high.",
-            "drink += 16",
+            "drink += 12",
             "hype += 0",
-            "madness += 12"
+            "madness += 9"
           ]
         }
       ]
@@ -954,8 +959,8 @@
           "text": "yes",
           "actions": [
             "message Everybody does this realizing they're throwing bottles of booze over their shoulders. ",
-            "drink += -12",
-            "hype += -20",
+            "drink += -9",
+            "hype += -15",
             "madness += 0"
           ]
         },
@@ -963,8 +968,8 @@
           "text": "no",
           "actions": [
             "message Mimes suck. Drink up is the new party anthem",
-            "drink += 16",
-            "hype += 12",
+            "drink += 12",
+            "hype += 9",
             "madness += 0"
           ]
         }
@@ -979,9 +984,9 @@
           "text": "yes",
           "actions": [
             "message You made Satan cry.",
-            "drink += -12",
+            "drink += -9",
             "hype += 0",
-            "madness += -12"
+            "madness += -9"
           ]
         },
         {
@@ -989,8 +994,8 @@
           "actions": [
             "message The flames of hell, sulfur and brimstone liven up the party.",
             "drink += 0",
-            "hype += 16",
-            "madness += 20"
+            "hype += 12",
+            "madness += 15"
           ]
         }
       ]
@@ -1004,18 +1009,18 @@
           "text": "yes",
           "actions": [
             "message Michelle comes and gives a lecture on fintess and how drinking is not good.",
-            "drink += -16",
-            "hype += -4",
-            "madness += 4"
+            "drink += -12",
+            "hype += -3",
+            "madness += 3"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The former president pours a line of shots called \"the Hussein\". ",
-            "drink += 16",
-            "hype += 20",
-            "madness += 4"
+            "drink += 12",
+            "hype += 15",
+            "madness += 3"
           ]
         }
       ]
@@ -1029,8 +1034,8 @@
           "text": "yes",
           "actions": [
             "message You are viewed as  bully.",
-            "drink += -8",
-            "hype += -12",
+            "drink += -6",
+            "hype += -9",
             "madness += 0"
           ]
         },
@@ -1038,9 +1043,9 @@
           "text": "no",
           "actions": [
             "message People drop their drinks as they pick up and parade the skinny dude like a winner.",
-            "drink += -20",
+            "drink += -15",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         }
       ]
@@ -1054,18 +1059,18 @@
           "text": "yes",
           "actions": [
             "message The generation gap is too deep to have a meaningful conversation.",
-            "drink += -12",
-            "hype += -12",
-            "madness += -16"
+            "drink += -9",
+            "hype += -9",
+            "madness += -12"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The generation gap is too deep to have a meaningful conversation.",
-            "drink += -4",
-            "hype += -8",
-            "madness += 16"
+            "drink += -3",
+            "hype += -6",
+            "madness += 12"
           ]
         }
       ]
@@ -1079,18 +1084,18 @@
           "text": "yes",
           "actions": [
             "message The whole party gets plastered on elven wine and dwarven grog.",
-            "drink += 16",
-            "hype += -12",
-            "madness += 8"
+            "drink += 12",
+            "hype += -9",
+            "madness += 6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Someone hits the dude in the head with a can of beer breaking his glasses.",
-            "drink += 4",
-            "hype += 8",
-            "madness += 12"
+            "drink += 3",
+            "hype += 6",
+            "madness += 9"
           ]
         }
       ]
@@ -1098,24 +1103,24 @@
     "question_35": {
       "id": "question_35",
       "character": "rockstar",
-      "text": "If you love rock'n'roll  put another dime in the jukebox. Barbara Streisand is next in the queue",
+      "text": "This party is bombing. Should we take it to the next level??",
       "choices": [
         {
           "text": "yes",
           "actions": [
-            "message ",
+            "message Oldschool rock'n'roll gets everyone jumping, just doesn't get enough internet points",
             "drink += 0",
-            "hype += -16",
-            "madness += 8"
+            "hype += -12",
+            "madness += 6"
           ]
         },
         {
           "text": "no",
           "actions": [
-            "message ",
-            "drink += -8",
-            "hype += -16",
-            "madness += 20"
+            "message Whatever the kids are listening to these days ",
+            "drink += -6",
+            "hype += 6",
+            "madness += 15"
           ]
         }
       ]
@@ -1129,17 +1134,17 @@
           "text": "yes",
           "actions": [
             "message A bunch of people stop drinking and just watch this guy playing five finger fillet with his weird knife fingers",
-            "drink += 20",
-            "hype += -12",
-            "madness += 20"
+            "drink += 15",
+            "hype += -9",
+            "madness += 15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Someone posts a picture with the caption \"the dream guy from rick and morty\"",
-            "drink += -4",
-            "hype += 4",
+            "drink += -3",
+            "hype += 3",
             "madness += 0"
           ]
         }
@@ -1154,8 +1159,8 @@
           "text": "yes",
           "actions": [
             "message The quality of the track is horrible and the speakers make a deafening noise.",
-            "drink += 4",
-            "hype += -20",
+            "drink += 3",
+            "hype += -15",
             "madness += 0"
           ]
         },
@@ -1163,9 +1168,9 @@
           "text": "no",
           "actions": [
             "message Some trap music starts playing. Skrraa pop pop.",
-            "drink += -8",
-            "hype += 8",
-            "madness += 8"
+            "drink += -6",
+            "hype += 6",
+            "madness += 6"
           ]
         }
       ]
@@ -1180,17 +1185,17 @@
           "actions": [
             "message This whole party is going to hell.",
             "drink += 0",
-            "hype += 12",
-            "madness += 16"
+            "hype += 9",
+            "madness += 12"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Water turns to wine and people start loving their neighbour.",
-            "drink += 20",
+            "drink += 15",
             "hype += 0",
-            "madness += -16"
+            "madness += -12"
           ]
         }
       ]
@@ -1205,17 +1210,17 @@
           "actions": [
             "message Damn lady, take a chill pill",
             "drink += 0",
-            "hype += -20",
-            "madness += -12"
+            "hype += -15",
+            "madness += -9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message People drink up, preparing to leave at any moment, but nothing happens.",
-            "drink += -16",
+            "drink += -12",
             "hype += 0",
-            "madness += 16"
+            "madness += 12"
           ]
         }
       ]
@@ -1229,18 +1234,18 @@
           "text": "yes",
           "actions": [
             "message Young kids keepin' it fresh.",
-            "drink += 12",
-            "hype += -8",
-            "madness += 12"
+            "drink += 9",
+            "hype += -6",
+            "madness += 9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Cougars getting down. The internet shows record searches for the MILF genre ",
-            "drink += -8",
-            "hype += 20",
-            "madness += 16"
+            "drink += -6",
+            "hype += 15",
+            "madness += 12"
           ]
         }
       ]
@@ -1255,16 +1260,16 @@
           "actions": [
             "message Pass the dutchie to the left hand side",
             "drink += 0",
-            "hype += 12",
-            "madness += -20"
+            "hype += 9",
+            "madness += -15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Without alternatives, people just drink. Like a lot.",
-            "drink += -20",
-            "hype += -12",
+            "drink += -15",
+            "hype += -9",
             "madness += 0"
           ]
         }
@@ -1280,16 +1285,16 @@
           "actions": [
             "message poof!",
             "drink += 0",
-            "hype += -12",
-            "madness += 20"
+            "hype += -9",
+            "madness += 15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message poof!",
-            "drink += 20",
-            "hype += 12",
+            "drink += 15",
+            "hype += 9",
             "madness += 0"
           ]
         }
@@ -1304,18 +1309,18 @@
           "text": "yes",
           "actions": [
             "message The party is stalling but you make reddit front page.",
-            "drink += 4",
-            "hype += 12",
-            "madness += -16"
+            "drink += 3",
+            "hype += 9",
+            "madness += -12"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message The party rage on but the influencer chick writes a post how you hate kittens",
-            "drink += 4",
-            "hype += -20",
-            "madness += 16"
+            "drink += 3",
+            "hype += -15",
+            "madness += 12"
           ]
         }
       ]
@@ -1330,17 +1335,17 @@
           "actions": [
             "message You are taken from the party for a couple of hours to a galaxy far far away where you pray Disney won't sue you for this reference.",
             "drink += 0",
-            "hype += -16",
-            "madness += -20"
+            "hype += -12",
+            "madness += -15"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message Smugglers join the party and turn the little robot into a globe bar. Projector included.",
-            "drink += 8",
+            "drink += 6",
             "hype += 0",
-            "madness += 20"
+            "madness += 15"
           ]
         }
       ]
@@ -1354,17 +1359,17 @@
           "text": "yes",
           "actions": [
             "message Then maybe you should drink and party less.",
-            "drink += -20",
+            "drink += -15",
             "hype += 0",
-            "madness += -8"
+            "madness += -6"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message You  sling 10 shots while gesturing with your index and pinky finger.",
-            "drink += 20",
-            "hype += 16",
+            "drink += 15",
+            "hype += 12",
             "madness += 0"
           ]
         }
@@ -1379,8 +1384,8 @@
           "text": "yes",
           "actions": [
             "message Everyone takes a chill pill, watching nature documentaries and stuffing up on Doritos and peanut butter jelly samwhiches",
-            "drink += -12",
-            "hype += -20",
+            "drink += -9",
+            "hype += -15",
             "madness += 0"
           ]
         },
@@ -1388,9 +1393,9 @@
           "text": "no",
           "actions": [
             "message Everyone gathers around Snoop to hear his stories about the times you could smoke in-doors, sipping on gin'n'juice.",
-            "drink += 16",
+            "drink += 12",
             "hype += 0",
-            "madness += -20"
+            "madness += -15"
           ]
         }
       ]
@@ -1405,8 +1410,8 @@
           "actions": [
             "message Everybody jumps in a mosh pit.",
             "drink += 0",
-            "hype += 16",
-            "madness += 20"
+            "hype += 12",
+            "madness += 15"
           ]
         },
         {
@@ -1414,8 +1419,8 @@
           "actions": [
             "message You lose 50 respect and everyone calls you a sourpuss.",
             "drink += 0",
-            "hype += -20",
-            "madness += -12"
+            "hype += -15",
+            "madness += -9"
           ]
         }
       ]
@@ -1429,17 +1434,17 @@
           "text": "yes",
           "actions": [
             "message The music bombs with something hard for the ears to translate. All drink to block it out.",
-            "drink += 12",
-            "hype += -16",
+            "drink += 9",
+            "hype += -12",
             "madness += 0"
           ]
         },
         {
           "text": "no",
           "actions": [
-            "message The starts blocking  doors and lighting fires. Takes half the party to throw him out",
-            "drink += -20",
-            "hype += -20",
+            "message The dude starts blocking doors and lighting fires. Takes half the party to throw him out",
+            "drink += -15",
+            "hype += -15",
             "madness += 0"
           ]
         }
@@ -1454,9 +1459,9 @@
           "text": "yes",
           "actions": [
             "message Rednecks, tigers, gay cowboys, guns and murder plots. You can't write that stuff.",
-            "drink += -4",
-            "hype += 12",
-            "madness += 20"
+            "drink += -3",
+            "hype += 9",
+            "madness += 15"
           ]
         },
         {
@@ -1464,8 +1469,8 @@
           "actions": [
             "message No pictures with baby tigers ?!? :(",
             "drink += 0",
-            "hype += -12",
-            "madness += 8"
+            "hype += -9",
+            "madness += 6"
           ]
         }
       ]
@@ -1479,18 +1484,18 @@
           "text": "yes",
           "actions": [
             "message They agree that gifting alcohol to humans was their greatest feat",
-            "drink += -4",
-            "hype += 20",
-            "madness += 12"
+            "drink += -3",
+            "hype += 15",
+            "madness += 9"
           ]
         },
         {
           "text": "no",
           "actions": [
             "message A laser beam vaporizes your icebox.",
-            "drink += -16",
-            "hype += -20",
-            "madness += 8"
+            "drink += -12",
+            "hype += -15",
+            "madness += 6"
           ]
         }
       ]
