@@ -15,7 +15,7 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 6.0
 } ]
 
 [node name="smoke_heart" type="Node2D"]

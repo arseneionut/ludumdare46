@@ -8,12 +8,12 @@ var people
 var turn_counter
 
 func _ready():
-#	var i = 1
-#	var a = 1
-#	while i < 15:
-#		i += 1
-#		a *= 1.4
-#		print(a)
+	# var i = 1
+	# var a = 1
+	# while i < 15:
+	# 	i += 1
+	# 	a *= 1.3
+	# 	print(a)
 	card = $party_viewer/card
 	card.connect("state_updated", self, "_on_card_state_updated")
 	card.connect("new_game", self, "_on_card_new_game")

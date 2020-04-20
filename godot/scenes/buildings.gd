@@ -5,7 +5,7 @@ enum { PLAYING, GAME_OVER }
 var counter
 var count_down_level
 var state = PLAYING
-var log_base = 1.4
+var log_base = 1.3
 
 onready var explosion_scene = preload("res://scenes/explosion.tscn")
 onready var smoke_heart_scene = preload("res://scenes/smoke_heart.tscn")
