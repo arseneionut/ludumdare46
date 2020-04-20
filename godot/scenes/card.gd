@@ -39,9 +39,9 @@ func populate_question():
 		var node = get_node("btn_choice_%d" % i)
 		node.visible = true
 		node.text = choice.text
-		print(choice.to_string())
+#		print(choice.to_string())
 		var affected_metrics = choice.get_affected_metrics()
-		print(affected_metrics)
+#		print(affected_metrics)
 		var j = 0
 		while j < 3 and j < affected_metrics.size():
 			var metric = affected_metrics[j]
