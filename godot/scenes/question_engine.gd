@@ -54,7 +54,7 @@ class Choice:
 		var metrics = {}
 		for action in actions:
 			var bits = Utils.split_and_clean(action, " ")
-			if bits.size() == 3:
+			if bits.size() == 3 and int(bits[2].strip_edges()) != 0:
 				metrics[bits[0]] = 1
 		return metrics.keys()
 	
