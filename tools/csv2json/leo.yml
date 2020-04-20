@@ -129,6 +129,7 @@ questions:
       - drink += 0
       - hype += 0
       - madness += 0
+      - add tutorial
       text: 'yes'
     - actions:
       - message Just make sure there's just enough booze, hype and excitement. EVERYONE
@@ -136,7 +137,10 @@ questions:
       - drink += 0
       - hype += 0
       - madness += 0
+      - add tutorial
       text: 'no'
+    conditions:
+    - tutorial absent
     id: question_0
     text: I swear, this is the best. Party. EVER! You just need to bring some more
       people in and keep the party alive. Are you ready?

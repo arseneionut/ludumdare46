@@ -231,7 +231,8 @@
             "message Hell ya!!! Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You're a Party God!",
             "drink += 0",
             "hype += 0",
-            "madness += 0"
+            "madness += 0",
+            "add tutorial"
           ]
         },
         {
@@ -240,9 +241,13 @@
             "message Just make sure there's just enough booze, hype and excitement. EVERYONE is going to be here! You got this, you're a Party God!",
             "drink += 0",
             "hype += 0",
-            "madness += 0"
+            "madness += 0",
+            "add tutorial"
           ]
         }
+      ],
+      "conditions": [
+        "tutorial absent"
       ]
     },
     "question_1": {
