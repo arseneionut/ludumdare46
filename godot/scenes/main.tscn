@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/buildings.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/metrics.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/people.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_over.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sound/background_1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/background_2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/sound/game_over.ogg" type="AudioStream" id=11]
@@ -121,6 +122,8 @@ volume_db = -15.0
 [node name="button_press" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 14 )
 volume_db = -15.0
+
+[node name="game_over" parent="." instance=ExtResource( 6 )]
 [connection signal="finished" from="sounds/background_1" to="." method="_on_background_1_finished"]
 [connection signal="finished" from="sounds/background_2" to="." method="_on_background_2_finished"]
 [connection signal="timeout" from="sounds/pause_timer" to="." method="_on_pause_timer_timeout"]

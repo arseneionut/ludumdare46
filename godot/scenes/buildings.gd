@@ -2,6 +2,8 @@ extends Node2D
 
 enum { PLAYING, GAME_OVER }
 
+signal game_over_animation_finished
+
 var counter
 var count_down_level
 var state = PLAYING
@@ -52,6 +54,7 @@ func _on_game_over_timer_timeout():
 		$game_over_timer.stop()
 		hide_all()
 		$buildings_0.visible = true
+		emit_signal("game_over_animation_finished")
 		return
 	show_level(count_down_level)
 

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/graphics/GameOver/boring.png" type="Texture" id=1]
+[ext_resource path="res://scenes/game_over.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/font_character_name.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/font_question.tres" type="DynamicFont" id=4]
+
+[node name="game_over" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Button" type="Button" parent="background"]
+margin_left = 497.234
+margin_top = 380.599
+margin_right = 667.234
+margin_bottom = 439.599
+custom_fonts/font = ExtResource( 3 )
+text = "Party ON!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_messages" type="Label" parent="background"]
+margin_left = 441.0
+margin_top = 192.0
+margin_right = 667.0
+margin_bottom = 367.0
+custom_fonts/font = ExtResource( 4 )
+text = "This is the end message."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="background/Button" to="." method="_on_Button_pressed"]

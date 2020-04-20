@@ -1,7 +1,6 @@
 extends Node2D
 
 signal state_updated
-signal new_game
 signal game_over
 signal new_card
 signal button_press
@@ -65,11 +64,9 @@ func populate_messages():
 	var messages = engine.get_latest_messages()
 	var text = PoolStringArray(messages).join("\n\n")
 	$lbl_question.text = text
-	$btn_choice_2.visible = true
 	hide_metric_icons()
-	if engine.is_game_over():
-		$btn_choice_2.text = "Play again?"
-	else:
+	$btn_choice_2.visible = not engine.is_game_over()
+	if not engine.is_game_over():
 		$btn_choice_2.text = "Next"
 
 func _on_btn_choice_1_pressed():
@@ -95,8 +92,5 @@ func button_press_answer(button):
 	emit_signal("state_updated")
 
 func button_press_continue():
-	if engine.is_game_over():
-		emit_signal("new_game")
-	else:
-		state = 0
-		populate_question()
+	state = 0
+	populate_question()

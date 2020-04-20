@@ -16,11 +16,15 @@ func _ready():
 	# 	print(a)
 	card = $party_viewer/card
 	card.connect("state_updated", self, "_on_card_state_updated")
-	card.connect("new_game", self, "_on_card_new_game")
 	card.connect("game_over", self, "_on_card_game_over")
 	card.connect("new_card", self, "_on_card_new_card")
 	card.connect("button_press", self, "_on_card_button_press")
 	buildings = $party_viewer/buildings
+	buildings.connect(
+		"game_over_animation_finished",
+		self,
+		"_on_buildings_game_over_animation_finished")
+	$game_over.connect("new_game", self, "_on_card_new_game")
 	initialize_engine()
 
 func _on_card_state_updated():
@@ -35,7 +39,6 @@ func _on_card_new_game():
 
 func _on_card_game_over():
 	buildings.game_over()
-	play_game_over()
 
 func _on_card_new_card():
 	play_new_card()
@@ -43,8 +46,13 @@ func _on_card_new_card():
 func _on_card_button_press():
 	play_button_press()
 
+func _on_buildings_game_over_animation_finished():
+	play_game_over()
+	$game_over.show_game_over(get_metrics_dict())
+
 func initialize_engine():
 	buildings.new_game()
+	$game_over.hide_game_over()
 	people = 5
 	turn_counter = 1
 	$party_viewer/people.set_count(people)
@@ -57,12 +65,15 @@ func initialize_engine():
 	card.populate_ui()
 
 func populate_metrics():
+	$party_viewer/metrics.update_values(get_metrics_dict())
+	debug_metrics()
+
+func get_metrics_dict():
 	var dict = {}
 	for metric_name in engine.get_metric_names():
 		var metric = engine.get_metric(metric_name)
 		dict[metric_name] = metric.value
-	$party_viewer/metrics.update_values(dict)
-	debug_metrics()
+	return dict	
 
 func debug_metrics():
 	var metrics = engine.get_metric_names()

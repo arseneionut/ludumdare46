@@ -343,4 +343,3 @@ func _eval_condition(condition):
 			">=":
 				return metric_value >= value
 	return true
-
