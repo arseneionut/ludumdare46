@@ -3,6 +3,7 @@ import yaml
 import os
 import json
 import random
+import datetime
 
 
 class Utils:
@@ -269,24 +270,36 @@ class TestCards:
 
         self.selected_questions = {k: 0 for k, v in self.validator._processed_data[YMLNodes.QUESTIONS].items()}
 
-        for play_session in range(0, 5000):
+        self.game_ended_by_type = {
+            'madness': 0,
+            'hype': 0,
+            'drink': 0
+        }
+        for play_session in range(0, 1000):
             self.simulate()
             self.current_question = self.validator._processed_data[YMLNodes.QUESTIONS][
                 self.validator._processed_data[YMLNodes.START_QUESTION]]
+
             self.is_game_ended = False
 
-        print("----------------------------------------------\n")
         for k, v in self.selected_questions.items():
-            print("{} = {} \n".format(k, v))
-        print("----------------------------------------------\n")
+            print("{} = {}".format(k, v))
+        for k, v in self.game_ended_by_type.items():
+            print("{} = {}".format(k, v))
 
     def simulate(self):
+        self.drink = 50
+        self.hype = 50
+        self.madness = 50
+        self.selected_questions[self.validator._processed_data[YMLNodes.START_QUESTION]] += 1
         while not self.is_game_ended:
-            print("----------------------------------------------\n"
-                  "DRINKS = {}".format(self.drink),
-                  "HYPE = {}".format(self.hype),
-                  "MADNESS = {} \n".format(self.madness),
-                  "----------------------------------------------\n")
+            # print("----------------------------------------------\n"
+            #       "DRINKS = {}".format(self.drink),
+            #       "HYPE = {}".format(self.hype),
+            #       "MADNESS = {} \n".format(self.madness),
+            #       "----------------------------------------------\n")
+            random.seed(datetime.datetime.now().timestamp())
+
             choice = random.randint(0, 1)
 
             for action in self.current_question.choices[choice].actions:
@@ -296,15 +309,27 @@ class TestCards:
                     self.tokens.remove(action.value)
                 elif action.key == 'drink':
                     self.drink = self.do_operation(self.drink, action.value, action.action_type)
-                elif action.key == 'police':
+                elif action.key == 'hype':
                     self.hype = self.do_operation(self.hype, action.value, action.action_type)
                 elif action.key == 'madness':
                     self.madness = self.do_operation(self.madness, action.value, action.action_type)
                 elif action.action_type == ActionType.GAME_OVER:
                     self.is_game_ended = True
 
-            if (self.drink <= 0 or self.madness <= 0 or self.hype <= 0):
+            if self.drink <= 0 or self.drink >= 100:
                 self.is_game_ended = True
+                self.game_ended_by_type['drink'] += 1
+                return
+
+            if self.madness >= 100 or self.madness <= 0:
+                self.is_game_ended = True
+                self.game_ended_by_type['madness'] += 1
+                return
+
+            if self.hype <= 0 or self.hype >= 100:
+                self.is_game_ended = True
+                self.game_ended_by_type['hype'] += 1
+                return
 
             self.select_next_question()
 
@@ -323,24 +348,26 @@ class TestCards:
                 real_chance_list[chance.next_question] = chance.percentage
                 total_option_percentage += chance.percentage
 
-        print("----------------------------------------------\n"
-              "THIS IS THE QUESTION POOL FOR THE NEXT QUESTION\n"
-              "{}\n".format(question_pool),
-              "THIS IS THE FINAL CHANCES LIST\n"
-              "{}\n".format(real_chance_list),
-              "----------------------------------------------\n")
-        chance = random.randint(0, 100) / 100.0
+        # print("----------------------------------------------\n"
+        #       "THIS IS THE QUESTION POOL FOR THE NEXT QUESTION\n"
+        #       "{}\n".format(question_pool),
+        #       "THIS IS THE FINAL CHANCES LIST\n"
+        #       "{}\n".format(real_chance_list),
+        #       "----------------------------------------------\n")
+        random.seed(datetime.datetime.now().timestamp())
+        chance = random.randint(0, 101) / 100.0
 
-        print("Random chance is {}".format(chance))
+        # print("Random chance is {}".format(chance))
 
         if chance >= total_option_percentage:
+            random.seed(datetime.datetime.now().timestamp())
             keys_view = real_chance_list.keys()
             key_iterator = iter(keys_view)
             selected_key = ""
-            selected_random_key = random.randint(1, len(question_pool) - 1)
+            selected_random_key = random.randint(1, len(question_pool))
             for i in range(0, selected_random_key):
                 selected_key = next(key_iterator)
-            self.current_question = real_chance_list[selected_key]
+            self.current_question = question_pool[selected_key]
             self.selected_questions[selected_key] += 1
         else:
             real_chance_list = {k: v for k, v in sorted(real_chance_list.items(), key=lambda item: item[1])}
@@ -349,10 +376,10 @@ class TestCards:
             first_value = next(value_iterator)
             prev_kev_item = first_value
             for k, v in real_chance_list.items():
-                if prev_kev_item >= chance and chance <= (prev_kev_item + v):
+                if prev_kev_item <= chance and chance <= (prev_kev_item + v):
                     self.current_question = question_pool[k]
                     self.selected_questions[k] += 1
-                    print("Question {} was selected".format(k))
+                    # print("Question {} was selected".format(k))
                 prev_kev_item += v
 
     @staticmethod
