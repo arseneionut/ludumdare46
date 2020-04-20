@@ -49,6 +49,14 @@ func initialize_engine():
 	card.populate_ui()
 
 func populate_metrics():
+	var dict = {}
+	for metric_name in engine.get_metric_names():
+		var metric = engine.get_metric(metric_name)
+		dict[metric_name] = metric.value
+	$party_viewer/metrics.update_values(dict)
+	debug_metrics()
+
+func debug_metrics():
 	var metrics = engine.get_metric_names()
 	$CanvasLayer/Panel2/lbl_metric_1.visible = false
 	$CanvasLayer/Panel2/lbl_metric_2.visible = false

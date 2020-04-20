@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/card.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/buildings.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/metrics.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sound/background_1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://assets/sound/background_2.ogg" type="AudioStream" id=10]
 [ext_resource path="res://assets/sound/game_over.ogg" type="AudioStream" id=11]
@@ -19,9 +20,12 @@ script = ExtResource( 1 )
 
 [node name="card" parent="party_viewer" instance=ExtResource( 2 )]
 
+[node name="metrics" parent="party_viewer" instance=ExtResource( 4 )]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel2" type="Panel" parent="CanvasLayer"]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 810.628
 margin_right = 1021.63

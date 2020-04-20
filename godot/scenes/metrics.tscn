@@ -1,0 +1,119 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/metrics.gd" type="Script" id=1]
+[ext_resource path="res://scenes/metric.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/font_question.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/graphics/Metrics/metrics_background.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Metrics/bar_full.png" type="Texture" id=5]
+
+[node name="metrics" type="Node"]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="metric_drink" type="Node2D" parent="."]
+position = Vector2( 24.5547, 451.609 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bar" type="Sprite" parent="metric_drink"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 11, 8, 312, 17 )
+
+[node name="lbl_min" type="Label" parent="metric_drink"]
+margin_top = 17.0
+margin_right = 127.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "sober"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_max" type="Label" parent="metric_drink"]
+margin_left = 171.0
+margin_top = 17.0
+margin_right = 310.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "wasted"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="metric_madness" type="Node2D" parent="."]
+position = Vector2( 24.5547, 495.609 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bar" type="Sprite" parent="metric_madness"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 11, 8, 312, 17 )
+
+[node name="lbl_min" type="Label" parent="metric_madness"]
+margin_top = 17.0
+margin_right = 127.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "sober"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_max" type="Label" parent="metric_madness"]
+margin_left = 171.0
+margin_top = 17.0
+margin_right = 310.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "wasted"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="metric_hype" type="Node2D" parent="."]
+position = Vector2( 24.5547, 539.609 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bar" type="Sprite" parent="metric_hype"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 11, 8, 312, 17 )
+
+[node name="lbl_min" type="Label" parent="metric_hype"]
+margin_top = 17.0
+margin_right = 127.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "sober"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lbl_max" type="Label" parent="metric_hype"]
+margin_left = 171.0
+margin_top = 17.0
+margin_right = 310.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 3 )
+text = "wasted"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
