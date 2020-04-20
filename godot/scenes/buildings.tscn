@@ -273,10 +273,25 @@ position = Vector2( 551.644, 469.353 )
 [node name="pos_5" type="Position2D" parent="effects/explosions"]
 position = Vector2( 386.81, 469.353 )
 
-[node name="timer" type="Timer" parent="effects/explosions"]
+[node name="hearts" type="Node" parent="effects"]
+
+[node name="pos_1" type="Position2D" parent="effects/hearts"]
+position = Vector2( 442.64, 403.245 )
+
+[node name="pos_2" type="Position2D" parent="effects/hearts"]
+position = Vector2( 619.836, 503.063 )
+
+[node name="pos_3" type="Position2D" parent="effects/hearts"]
+position = Vector2( 856.613, 506.063 )
+
+[node name="pos_4" type="Position2D" parent="effects/hearts"]
+position = Vector2( 775.461, 499.063 )
+
+[node name="pos_5" type="Position2D" parent="effects/hearts"]
+position = Vector2( 782.746, 147.861 )
+
+[node name="timer" type="Timer" parent="effects"]
 wait_time = 10.0
 autostart = true
-
-[node name="hearts" type="Node" parent="effects"]
 [connection signal="timeout" from="game_over_timer" to="." method="_on_game_over_timer_timeout"]
-[connection signal="timeout" from="effects/explosions/timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="effects/timer" to="." method="_on_timer_timeout"]

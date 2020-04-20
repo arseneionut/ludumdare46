@@ -1,0 +1,28 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart5.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart7.png" type="Texture" id=2]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart8.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart6.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart4.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart3.png" type="Texture" id=6]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart1.png" type="Texture" id=7]
+[ext_resource path="res://assets/graphics/Sprites/Smoke Heart/heart2.png" type="Texture" id=8]
+[ext_resource path="res://scenes/smoke_heart.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="smoke_heart" type="Node2D"]
+position = Vector2( 524.696, 273.979 )
+script = ExtResource( 9 )
+
+[node name="animation" type="AnimatedSprite" parent="."]
+position = Vector2( 4, -67.2025 )
+frames = SubResource( 1 )
+[connection signal="animation_finished" from="animation" to="." method="_on_animation_animation_finished"]
