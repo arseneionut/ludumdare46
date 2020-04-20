@@ -2,6 +2,7 @@ import argparse
 import yaml
 import os
 import json
+import random
 
 
 class Utils:
@@ -17,8 +18,11 @@ class ActionType:
     ADD = "add"
     SUBTRACT = "subtract"
     SET = "set"
-    REMOVE = "remove"
-    OVER = "over"
+    OVER = "game-over"
+    MESSAGE = "message"
+    ADD_TOKEN = "add-token"
+    REMOVE_TOKEN = "remove-token"
+    GAME_OVER = "game-over"
 
     SYMBOL_TO_TYPE_MAP = \
         {
@@ -26,8 +30,7 @@ class ActionType:
             "-=": SUBTRACT,
             "=": SET,
             "add": ADD,
-            "remove": REMOVE,
-            "game": OVER
+            "remove": REMOVE_TOKEN,
         }
 
     @staticmethod
@@ -63,10 +66,13 @@ class Question:
         self.choices = []
         self.next = []
         self.character = Utils.get_key_with_debug(json_question_data, 'character')
-        self.in_random_pool = Utils.get_key_with_debug(json_question_data, 'in-random-pool')
-        if(Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
-            for condition in Utils.get_key_with_debug(json_question_data, 'conditions'):
-                self.conditions.append(Condition(condition))
+        if 'in-random-pool' in json_question_data:
+            self.in_random_pool = Utils.get_key_with_debug(json_question_data, 'in-random-pool')
+
+        if 'conditions' in json_question_data:
+            if(Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
+                for condition in Utils.get_key_with_debug(json_question_data, 'conditions'):
+                    self.conditions.append(Condition(condition))
 
         for choice in Utils.get_key_with_debug(json_question_data, 'choices'):
             self.choices.append(Choice(choice))
@@ -74,8 +80,9 @@ class Question:
         if len(json_question_data['choices']) != 2:
             print("Question {} has wrong number of choices".format(self.name))
 
-        for chance in Utils.get_key_with_debug(json_question_data, 'next'):
-            self.next.append(Chance(chance))
+        if 'next' in json_question_data:
+            for chance in Utils.get_key_with_debug(json_question_data, 'next'):
+                self.next.append(Chance(chance))
 
 
 class Character:
@@ -88,6 +95,8 @@ class Chance:
     def __init__(self, json_chance_data):
         string_items = json_chance_data.split(' ')
 
+        if int(json_chance_data) == 0:
+            return
         if len(string_items) == 3:
             self.percentage = int(string_items[0].strip()[:-1]) / 100.0
             self.next_question = string_items[2].strip()
@@ -134,22 +143,25 @@ class Choice:
 class Action:
     def __init__(self, json_action_data):
         string_items = json_action_data.split(' ')
+        if string_items[0].strip() == 'message':
+            self.value = json_action_data
+            self.key = None
+            self.action_type = ActionType.MESSAGE
+            return
+        if  json_action_data == 'game over':
+            self.value = json_action_data
+            self.key = None
+            self.action_type = ActionType.GAME_OVER
+            return
 
         if len(string_items) == 3:
-            if string_items[0].strip() != 'message':
-                self.action_type = ActionType.get_action_type(string_items[1].strip())
-                self.key = string_items[0].strip()
-                self.value = int(string_items[2].strip())
-            else:
-                self.value = json_action_data
-
+            self.action_type = ActionType.get_action_type(string_items[1].strip())
+            self.key = string_items[0].strip()
+            self.value = int(string_items[2].strip())
         elif len(string_items) == 2:
             self.action_type = ActionType.get_action_type(string_items[0].strip())
             self.key = None
             self.value = string_items[1].strip()
-
-        else:
-            self.value = json_action_data
 
 
 class Metric:
@@ -195,15 +207,21 @@ class Validator:
         print("Question Count: {}".format(len(self._processed_data[YMLNodes.QUESTIONS])))
         print("Metrics Count: {}".format(len(self._processed_data[YMLNodes.METRICS])))
 
-    def get_questions_by_metrics(self, fun, police, tokens):
+    def get_questions_by_metrics(self, drink, hype, madness, tokens):
         questions_list = {}
         for question_id, question_data in self._processed_data[YMLNodes.QUESTIONS].items():
+            if(len(question_data.conditions) == 0 or bool(question_data.in_random_pool)):
+                questions_list[question_id] = question_data
+
             for condition in question_data.conditions:
-                if condition.name == 'fun':
-                    if not self.compare(fun, condition.value, condition.sign):
+                if condition.name == 'drink':
+                    if not self.compare(drink, condition.value, condition.sign):
                         break
-                if condition.name == 'police':
-                    if not self.compare(police, condition.value, condition.sign):
+                if condition.name == 'hype':
+                    if not self.compare(hype, condition.value, condition.sign):
+                        break
+                if condition.name == 'madness':
+                    if not self.compare(madness, condition.value, condition.sign):
                         break
                 if condition.type == ConditionTypes.TOKEN:
                     has_token = False
@@ -219,6 +237,7 @@ class Validator:
                             if has_token and index == len(tokens) - 1:
                                 break
             questions_list[question_id] = question_data
+        return questions_list
 
     @staticmethod
     def compare(a, b, sign):
@@ -238,9 +257,104 @@ class TestCards:
     def __init__(self, validator):
         self.validator = validator
 
-        self.fun = 0
-        self.police = 0
+        self.tokens = []
 
+        self.drink = 50
+        self.hype = 50
+        self.madness = 50
+
+        self.current_question = self.validator._processed_data[YMLNodes.QUESTIONS][self.validator._processed_data[YMLNodes.START_QUESTION]]
+        self.is_game_ended = False;
+
+        self.selected_questions = {k:0 for k,v in self.validator._processed_data[YMLNodes.QUESTIONS].items()}
+
+        self.simulate()
+        print("----------------------------------------------\n")
+        for k,v in self.selected_questions.items():
+            print("{} = {} \n".format(k, v))
+        print("----------------------------------------------\n")
+
+    def simulate(self):
+        while(not self.is_game_ended):
+            print("----------------------------------------------\n"
+                  "DRINKS = {}".format(self.drink),
+                  "HYPE = {}".format(self.hype),
+                  "MADNESS = {} \n".format(self.madness),
+                  "----------------------------------------------\n")
+            choice = random.randint(0,1)
+
+            for action in self.current_question.choices[choice].actions:
+                if action.action_type == ActionType.ADD_TOKEN:
+                    self.tokens.append(action.value)
+                elif action.action_type == ActionType.REMOVE_TOKEN:
+                    self.tokens.remove(action.value)
+                elif action.key == 'drink':
+                    self.drink = self.do_operation(self.drink, action.value, action.action_type)
+                elif action.key == 'police':
+                    self.hype = self.do_operation(self.hype, action.value, action.action_type)
+                elif action.key == 'madness':
+                    self.madness = self.do_operation(self.madness, action.value, action.action_type)
+                elif action.action_type == ActionType.GAME_OVER:
+                    self.is_game_ended = True
+
+            if(self.drink <= 0 or self.madness <= 0 or self.hype <= 0):
+                self.is_game_ended = True
+
+            self.select_next_question()
+
+    def select_next_question(self):
+        question_pool = self.validator.get_questions_by_metrics(self.drink, self.hype, self.madness, self.tokens)
+
+        real_chance_list = {}
+        total_option_percentage = 0;
+
+        if len(self.current_question.next) == 0:
+            for question_id in question_pool.keys():
+                real_chance_list[question_id] = 1 / len(question_pool)
+                total_option_percentage += 1 / len(question_pool)
+        for chance in self.current_question.next:
+           if chance.next_question in question_pool:
+               real_chance_list[chance.next_question] = chance.percentage
+               total_option_percentage += chance.percentage
+
+        print("----------------------------------------------\n"
+              "THIS IS THE QUESTION POOL FOR THE NEXT QUESTION\n"
+              "{}\n".format(question_pool),
+              "THIS IS THE FINAL CHANCES LIST\n"
+              "{}\n".format(real_chance_list),
+              "----------------------------------------------\n")
+        chance = random.randint(0, 100) / 100.0
+
+        print("Random chance is {}".format(chance))
+
+        if chance >= total_option_percentage:
+            keys_view = real_chance_list.keys()
+            key_iterator = iter(keys_view)
+            for i in range(0, random.randint(0, len(question_pool) - 1)):
+                selected_key = next(key_iterator)
+            self.current_question = real_chance_list[selected_key]
+            self.selected_questions[selected_key] += 1
+        else:
+            real_chance_list = {k: v for k, v in sorted(real_chance_list.items(), key=lambda item: item[1])}
+            values_view = real_chance_list.values()
+            value_iterator = iter(values_view)
+            first_value = next(value_iterator)
+            prev_kev_item = first_value
+            for k, v in real_chance_list.items():
+                if prev_kev_item >= chance and chance <= (prev_kev_item + v):
+                    self.current_question = question_pool[k]
+                    self.selected_questions[k] += 1
+                    print("Question {} was selected".format(k))
+                prev_kev_item += v
+
+    @staticmethod
+    def do_operation(a , b, operation):
+        if operation == ActionType.ADD:
+            return a+b
+        elif operation == ActionType.SUBTRACT:
+            return a-b
+        elif operation == ActionType.SET:
+            return b
 
 
 def main(ymlpath, jsonpath, test_cards):
@@ -250,10 +364,12 @@ def main(ymlpath, jsonpath, test_cards):
     json_data = yaml.load(document, Loader=yaml.FullLoader)
     f.close()
 
-    Validator(json_data)
+    validator = Validator(json_data)
+    TestCards(validator).simulate()
 
     if test_cards:
         print("will pass through all the cards")
+
 
     nf = open(os.path.abspath(jsonpath + "\\output.json"), "w+")
     nf.write(json.dumps(json_data))
