@@ -202,7 +202,18 @@ func make_choice(choice_index):
 		_choose_next_question()
 
 func get_latest_messages():
-	return _current_messages
+	var result = []
+	for message in _current_messages:
+		if message[0] != "@":
+			result.append(message)
+	return result
+
+func get_game_over_messages():
+	var result = []
+	for message in _current_messages:
+		if message[0] == "@":
+			result.append(message.substr(1))
+	return result
 
 func get_present_tokens():
 	var result = []

@@ -258,7 +258,7 @@ position = Vector2( 408.837, 371.998 )
 rotation = -0.0733038
 
 [node name="game_over_timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 
 [node name="effects" type="Node" parent="."]
 

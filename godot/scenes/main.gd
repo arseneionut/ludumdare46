@@ -48,7 +48,9 @@ func _on_card_button_press():
 
 func _on_buildings_game_over_animation_finished():
 	play_game_over()
-	$game_over.show_game_over(get_metrics_dict())
+	$game_over.show_game_over(
+		get_metrics_dict(), 
+		engine.get_game_over_messages())
 
 func initialize_engine():
 	buildings.new_game()
