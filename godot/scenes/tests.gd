@@ -17,6 +17,9 @@ class MockRng:
 
 	func randf():
 		return _value
+		
+	func randi_range(min_value, max_value):
+		return int((min_value + max_value) / 2)
 
 func _ready():
 	# don't run tests if this is not a debug build

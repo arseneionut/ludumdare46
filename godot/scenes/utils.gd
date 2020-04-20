@@ -24,7 +24,7 @@ func copy_array(array):
 
 var rng = RandomNumberGenerator.new()
 
-func _init():
+func _ready():
 	rng.randomize()
 
 func safe_get(dict, key, default_value):

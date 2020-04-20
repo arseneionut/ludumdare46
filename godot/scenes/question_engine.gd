@@ -310,7 +310,9 @@ func _build_explicit_others(next):
 		if question.id == _current_question_id:
 			continue
 		result.append(question)
-	result.shuffle()
+	if result.size() > 0:
+		var index = Utils.rng.randi_range(0, result.size() - 1)
+		result[0] = result[index]
 	return result
 
 func _eval_conditions(conditions):
