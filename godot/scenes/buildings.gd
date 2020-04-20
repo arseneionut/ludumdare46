@@ -24,12 +24,12 @@ func new_card():
 	_redisplay()
 
 func game_over():
-	count_down_level = int(clamp(log(counter) / log(log_base), 1, 15))
+	count_down_level = int(clamp(round(log(counter) / log(log_base)), 1, 15))
 	state = GAME_OVER
 	$game_over_timer.start()
 
 func _redisplay():
-	var level = int(clamp(log(counter) / log(log_base), 1, 15))
+	var level = int(clamp(floor(log(counter) / log(log_base)), 1, 15))
 	show_level(level)
 
 func show_level(level):

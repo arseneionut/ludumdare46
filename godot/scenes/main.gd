@@ -24,6 +24,10 @@ func _ready():
 	initialize_engine()
 
 func _on_card_state_updated():
+	buildings.new_card()
+	turn_counter += 1
+	people += turn_counter * 5
+	$party_viewer/people.set_count(people)
 	populate_metrics()
 
 func _on_card_new_game():
@@ -34,10 +38,6 @@ func _on_card_game_over():
 	play_game_over()
 
 func _on_card_new_card():
-	buildings.new_card()
-	turn_counter += 1
-	people += turn_counter * 5
-	$party_viewer/people.set_count(people)
 	play_new_card()
 
 func _on_card_button_press():
