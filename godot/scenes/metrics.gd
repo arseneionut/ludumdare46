@@ -6,7 +6,6 @@ func _ready():
 	$metric_hype.set_labels("boooooring!", "hyped!")
 
 func update_values(dict):
-	print(dict)
 	$metric_drink.set_value(dict["drink"])
 	$metric_madness.set_value(dict["madness"])
 	$metric_hype.set_value(dict["hype"])
