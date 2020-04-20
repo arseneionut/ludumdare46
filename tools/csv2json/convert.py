@@ -15,15 +15,15 @@ result = {
         },
         {
             "id": "astronaut",
-            "name": "Astronaut"
+            "name": "Major Tom"
         },
         {
             "id": "boomer1",
-            "name": "Boomer 1"
+            "name": "Some Boomer"
         },
         {
             "id": "boomer2",
-            "name": "Boomer 2"
+            "name": "Some Boomer"
         },
         {
             "id": "cena",
@@ -39,11 +39,11 @@ result = {
         },
         {
             "id": "disco1",
-            "name": "Disco 1"
+            "name": "Globe Spinnington"
         },
         {
             "id": "disco2",
-            "name": "Disco 2"
+            "name": "Gloria Lights"
         },
         {
             "id": "dog",
@@ -51,11 +51,11 @@ result = {
         },
         {
             "id": "dork1",
-            "name": "Dork 1"
+            "name": "Sheldon"
         },
         {
             "id": "dork2",
-            "name": "Dork 2"
+            "name": "Amy"
         },
         {
             "id": "dude",
@@ -87,11 +87,11 @@ result = {
         },
         {
             "id": "karen",
-            "name": "Karen"
+            "name": "Some Karen"
         },
         {
             "id": "karen2",
-            "name": "Karen 2"
+            "name": "Some Karen"
         },
         {
             "id": "magician",
@@ -111,11 +111,11 @@ result = {
         },
         {
             "id": "partygirl",
-            "name": "Party Girl"
+            "name": "Dream Girl"
         },
         {
             "id": "partygirl2",
-            "name": "Party Girl 2"
+            "name": "Random Party Chick"
         },
         {
             "id": "partyguy",
@@ -123,19 +123,19 @@ result = {
         },
         {
             "id": "police1",
-            "name": "Police 1"
+            "name": "Officer Doughnutson"
         },
         {
             "id": "police2",
-            "name": "Police 2"
+            "name": "Officer Handcuffs"
         },
         {
             "id": "punk1",
-            "name": "Punk 1"
+            "name": "Joey Ramone"
         },
         {
             "id": "punk2",
-            "name": "Punk 2"
+            "name": "Penny Trash"
         },
         {
             "id": "r2d2",
