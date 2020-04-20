@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/graphics/Buildings/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/graphics/Buildings/buildings_1.png" type="Texture" id=2]
@@ -17,12 +17,14 @@
 [ext_resource path="res://assets/graphics/Buildings/buildings_6.png" type="Texture" id=15]
 [ext_resource path="res://assets/graphics/Buildings/buildings_5.png" type="Texture" id=16]
 [ext_resource path="res://scenes/buildings.gd" type="Script" id=17]
+[ext_resource path="res://scenes/laser_green.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/laser_blue.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/laser_pink.tscn" type="PackedScene" id=20]
 
 [node name="buildings" type="Node2D"]
 script = ExtResource( 17 )
 
 [node name="background" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 1 )
 centered = false
 
@@ -46,60 +48,208 @@ visible = false
 texture = ExtResource( 5 )
 centered = false
 
+[node name="laser_blue" parent="buildings_4" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
+
 [node name="buildings_5" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 16 )
 centered = false
+
+[node name="laser_green" parent="buildings_5" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_blue2" parent="buildings_5" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
 
 [node name="buildings_6" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 15 )
 centered = false
 
+[node name="laser_green2" parent="buildings_6" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_blue3" parent="buildings_6" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
+
 [node name="buildings_7" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 14 )
 centered = false
+
+[node name="laser_green3" parent="buildings_7" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green2" parent="buildings_7" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+scale = Vector2( -1, 1 )
+
+[node name="laser_blue4" parent="buildings_7" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
 
 [node name="buildings_8" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 12 )
 centered = false
 
+[node name="laser_pink" parent="buildings_8" instance=ExtResource( 20 )]
+position = Vector2( 925.487, 484.956 )
+rotation = -0.972148
+
+[node name="laser_blue5" parent="buildings_8" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
+
+[node name="laser_green5" parent="buildings_8" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green4" parent="buildings_8" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
 [node name="buildings_9" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 13 )
 centered = false
+
+[node name="laser_blue6" parent="buildings_9" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
+
+[node name="laser_green7" parent="buildings_9" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green6" parent="buildings_9" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_pink2" parent="buildings_9" instance=ExtResource( 20 )]
+position = Vector2( 925.487, 484.956 )
+rotation = -0.972148
 
 [node name="buildings_10" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 7 )
 centered = false
 
+[node name="laser_green9" parent="buildings_10" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green8" parent="buildings_10" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_blue7" parent="buildings_10" instance=ExtResource( 19 )]
+position = Vector2( 962.547, 550.027 )
+
+[node name="laser_pink3" parent="buildings_10" instance=ExtResource( 20 )]
+position = Vector2( 675.117, 298.031 )
+rotation = 0.748746
+
 [node name="buildings_11" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 6 )
 centered = false
+
+[node name="laser_green11" parent="buildings_11" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green10" parent="buildings_11" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_blue7" parent="buildings_11" instance=ExtResource( 19 )]
+position = Vector2( 408.837, 418.659 )
+
+[node name="laser_pink4" parent="buildings_11" instance=ExtResource( 20 )]
+position = Vector2( 675.117, 298.031 )
+rotation = -1.0472
 
 [node name="buildings_12" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 11 )
 centered = false
 
+[node name="laser_blue8" parent="buildings_12" instance=ExtResource( 19 )]
+position = Vector2( 924.487, 263.964 )
+
+[node name="laser_green13" parent="buildings_12" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green12" parent="buildings_12" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_pink5" parent="buildings_12" instance=ExtResource( 20 )]
+position = Vector2( 859.734, 349.899 )
+rotation = 0.225147
+
 [node name="buildings_13" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 8 )
 centered = false
+
+[node name="laser_blue9" parent="buildings_13" instance=ExtResource( 19 )]
+position = Vector2( 924.487, 263.964 )
+
+[node name="laser_green15" parent="buildings_13" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green14" parent="buildings_13" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_pink6" parent="buildings_13" instance=ExtResource( 20 )]
+position = Vector2( 859.734, 349.899 )
+rotation = 0.225147
 
 [node name="buildings_14" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 9 )
 centered = false
 
+[node name="laser_blue10" parent="buildings_14" instance=ExtResource( 19 )]
+position = Vector2( 924.487, 263.964 )
+
+[node name="laser_green17" parent="buildings_14" instance=ExtResource( 18 )]
+position = Vector2( 683.742, 418.659 )
+
+[node name="laser_green18" parent="buildings_14" instance=ExtResource( 18 )]
+position = Vector2( 621.128, 298.341 )
+rotation = -0.523599
+
+[node name="laser_pink7" parent="buildings_14" instance=ExtResource( 20 )]
+position = Vector2( 853.595, 193.976 )
+rotation = 0.225147
+
 [node name="buildings_15" type="Sprite" parent="."]
-visible = false
 texture = ExtResource( 10 )
 centered = false
+
+[node name="laser_blue11" parent="buildings_15" instance=ExtResource( 19 )]
+position = Vector2( 509.511, 322.896 )
+
+[node name="laser_green20" parent="buildings_15" instance=ExtResource( 18 )]
+position = Vector2( 783.189, 532.839 )
+rotation = -3.14159
+scale = Vector2( 1, -1 )
+
+[node name="laser_green22" parent="buildings_15" instance=ExtResource( 18 )]
+position = Vector2( 928.062, 152.24 )
+rotation = -0.523599
+
+[node name="laser_pink8" parent="buildings_15" instance=ExtResource( 20 )]
+position = Vector2( 853.595, 193.976 )
+rotation = 0.225147
+
+[node name="laser_pink9" parent="buildings_15" instance=ExtResource( 20 )]
+position = Vector2( 408.837, 371.998 )
+rotation = -0.0733038
 
 [node name="game_over_timer" type="Timer" parent="."]
 wait_time = 0.5

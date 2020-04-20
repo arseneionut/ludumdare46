@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green1.png" type="Texture" id=1]
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green6.png" type="Texture" id=2]
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green5.png" type="Texture" id=3]
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green2.png" type="Texture" id=4]
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green4.png" type="Texture" id=5]
+[ext_resource path="res://assets/graphics/Sprites/Lasers/green3.png" type="Texture" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), null, ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="laser_green" type="Node2D"]
+position = Vector2( 521.789, 245.548 )
+
+[node name="animation" type="AnimatedSprite" parent="."]
+position = Vector2( 38.0599, -52.7927 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+offset = Vector2( 0, -4 )
