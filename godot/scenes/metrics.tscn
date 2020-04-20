@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/metrics.gd" type="Script" id=1]
 [ext_resource path="res://scenes/metric.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/graphics/Metrics/icons/icon_drink.png" type="Texture" id=6]
 [ext_resource path="res://assets/graphics/Metrics/icons/icon_hype.png" type="Texture" id=7]
 [ext_resource path="res://assets/graphics/Metrics/icons/icon_madness.png" type="Texture" id=8]
+[ext_resource path="res://assets/graphics/Metrics/bar_empty.png" type="Texture" id=9]
 
 [node name="metrics" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,22 +18,30 @@ texture = ExtResource( 4 )
 centered = false
 
 [node name="metric_drink" type="Node2D" parent="."]
-position = Vector2( 24.5547, 451.609 )
+position = Vector2( 24.5547, 449.609 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
+[node name="bar_background" type="Sprite" parent="metric_drink"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 313, 17 )
+
 [node name="bar" type="Sprite" parent="metric_drink"]
+position = Vector2( 0, 10 )
 texture = ExtResource( 5 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 11, 8, 312, 17 )
+region_rect = Rect2( 0, 0, 313, 17 )
 
 [node name="lbl_min" type="Label" parent="metric_drink"]
-margin_top = 17.0
+margin_top = 4.0
 margin_right = 127.0
-margin_bottom = 44.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "sober"
 __meta__ = {
@@ -40,10 +49,10 @@ __meta__ = {
 }
 
 [node name="lbl_max" type="Label" parent="metric_drink"]
-margin_left = 171.0
-margin_top = 17.0
-margin_right = 310.0
-margin_bottom = 44.0
+margin_left = 174.0
+margin_top = 4.0
+margin_right = 313.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "wasted"
 align = 2
@@ -52,7 +61,7 @@ __meta__ = {
 }
 
 [node name="icon" type="Sprite" parent="metric_drink"]
-position = Vector2( 153.22, 11 )
+position = Vector2( 153.22, 19 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 6 )
 
@@ -63,16 +72,24 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="bar_background" type="Sprite" parent="metric_madness"]
+position = Vector2( 0, 9 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 313, 17 )
+
 [node name="bar" type="Sprite" parent="metric_madness"]
+position = Vector2( 0, 9 )
 texture = ExtResource( 5 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 11, 8, 312, 17 )
+region_rect = Rect2( 0, 0, 313, 17 )
 
 [node name="lbl_min" type="Label" parent="metric_madness"]
-margin_top = 17.0
+margin_top = 3.0
 margin_right = 127.0
-margin_bottom = 44.0
+margin_bottom = 30.0
 custom_fonts/font = ExtResource( 3 )
 text = "sober"
 __meta__ = {
@@ -80,10 +97,10 @@ __meta__ = {
 }
 
 [node name="lbl_max" type="Label" parent="metric_madness"]
-margin_left = 171.0
-margin_top = 17.0
-margin_right = 310.0
-margin_bottom = 44.0
+margin_left = 174.0
+margin_top = 3.0
+margin_right = 313.0
+margin_bottom = 30.0
 custom_fonts/font = ExtResource( 3 )
 text = "wasted"
 align = 2
@@ -103,16 +120,24 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="bar_background" type="Sprite" parent="metric_hype"]
+position = Vector2( 0, 10 )
+texture = ExtResource( 9 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 313, 17 )
+
 [node name="bar" type="Sprite" parent="metric_hype"]
+position = Vector2( 0, 10 )
 texture = ExtResource( 5 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 11, 8, 312, 17 )
+region_rect = Rect2( 0, 0, 313, 17 )
 
 [node name="lbl_min" type="Label" parent="metric_hype"]
-margin_top = 17.0
+margin_top = 3.0
 margin_right = 127.0
-margin_bottom = 44.0
+margin_bottom = 30.0
 custom_fonts/font = ExtResource( 3 )
 text = "sober"
 __meta__ = {
@@ -120,10 +145,10 @@ __meta__ = {
 }
 
 [node name="lbl_max" type="Label" parent="metric_hype"]
-margin_left = 171.0
-margin_top = 17.0
-margin_right = 310.0
-margin_bottom = 44.0
+margin_left = 174.0
+margin_top = 4.0
+margin_right = 313.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 3 )
 text = "wasted"
 align = 2
