@@ -116,9 +116,11 @@ stream = ExtResource( 13 )
 
 [node name="new_card_2" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 12 )
+volume_db = -15.0
 
 [node name="button_press" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 14 )
+volume_db = -15.0
 [connection signal="finished" from="sounds/background_1" to="." method="_on_background_1_finished"]
 [connection signal="finished" from="sounds/background_2" to="." method="_on_background_2_finished"]
 [connection signal="timeout" from="sounds/pause_timer" to="." method="_on_pause_timer_timeout"]

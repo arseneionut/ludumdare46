@@ -59,7 +59,7 @@ class YMLNodes:
 
 
 class Question:
-    def __init__(self,name, json_question_data):
+    def __init__(self, name, json_question_data):
         self.name = name
         self.conditions = []
         self.text = Utils.get_key_with_debug(json_question_data, 'text')
@@ -70,7 +70,7 @@ class Question:
             self.in_random_pool = Utils.get_key_with_debug(json_question_data, 'in-random-pool')
 
         if 'conditions' in json_question_data:
-            if(Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
+            if (Utils.get_key_with_debug(json_question_data, 'conditions') is not None):
                 for condition in Utils.get_key_with_debug(json_question_data, 'conditions'):
                     self.conditions.append(Condition(condition))
 
@@ -86,7 +86,7 @@ class Question:
 
 
 class Character:
-    def __init__ (self, json_character_data):
+    def __init__(self, json_character_data):
         self.id = Utils.get_key_with_debug(json_character_data, 'id')
         self.name = Utils.get_key_with_debug(json_character_data, 'name')
 
@@ -148,7 +148,7 @@ class Action:
             self.key = None
             self.action_type = ActionType.MESSAGE
             return
-        if  json_action_data == 'game over':
+        if json_action_data == 'game over':
             self.value = json_action_data
             self.key = None
             self.action_type = ActionType.GAME_OVER
@@ -210,7 +210,7 @@ class Validator:
     def get_questions_by_metrics(self, drink, hype, madness, tokens):
         questions_list = {}
         for question_id, question_data in self._processed_data[YMLNodes.QUESTIONS].items():
-            if(len(question_data.conditions) == 0 or bool(question_data.in_random_pool)):
+            if (len(question_data.conditions) == 0 or bool(question_data.in_random_pool)):
                 questions_list[question_id] = question_data
 
             for condition in question_data.conditions:
@@ -263,25 +263,31 @@ class TestCards:
         self.hype = 50
         self.madness = 50
 
-        self.current_question = self.validator._processed_data[YMLNodes.QUESTIONS][self.validator._processed_data[YMLNodes.START_QUESTION]]
+        self.current_question = self.validator._processed_data[YMLNodes.QUESTIONS][
+            self.validator._processed_data[YMLNodes.START_QUESTION]]
         self.is_game_ended = False;
 
-        self.selected_questions = {k:0 for k,v in self.validator._processed_data[YMLNodes.QUESTIONS].items()}
+        self.selected_questions = {k: 0 for k, v in self.validator._processed_data[YMLNodes.QUESTIONS].items()}
 
-        self.simulate()
+        for play_session in range(0, 5000):
+            self.simulate()
+            self.current_question = self.validator._processed_data[YMLNodes.QUESTIONS][
+                self.validator._processed_data[YMLNodes.START_QUESTION]]
+            self.is_game_ended = False
+
         print("----------------------------------------------\n")
-        for k,v in self.selected_questions.items():
+        for k, v in self.selected_questions.items():
             print("{} = {} \n".format(k, v))
         print("----------------------------------------------\n")
 
     def simulate(self):
-        while(not self.is_game_ended):
+        while not self.is_game_ended:
             print("----------------------------------------------\n"
                   "DRINKS = {}".format(self.drink),
                   "HYPE = {}".format(self.hype),
                   "MADNESS = {} \n".format(self.madness),
                   "----------------------------------------------\n")
-            choice = random.randint(0,1)
+            choice = random.randint(0, 1)
 
             for action in self.current_question.choices[choice].actions:
                 if action.action_type == ActionType.ADD_TOKEN:
@@ -297,7 +303,7 @@ class TestCards:
                 elif action.action_type == ActionType.GAME_OVER:
                     self.is_game_ended = True
 
-            if(self.drink <= 0 or self.madness <= 0 or self.hype <= 0):
+            if (self.drink <= 0 or self.madness <= 0 or self.hype <= 0):
                 self.is_game_ended = True
 
             self.select_next_question()
@@ -313,9 +319,9 @@ class TestCards:
                 real_chance_list[question_id] = 1 / len(question_pool)
                 total_option_percentage += 1 / len(question_pool)
         for chance in self.current_question.next:
-           if chance.next_question in question_pool:
-               real_chance_list[chance.next_question] = chance.percentage
-               total_option_percentage += chance.percentage
+            if chance.next_question in question_pool:
+                real_chance_list[chance.next_question] = chance.percentage
+                total_option_percentage += chance.percentage
 
         print("----------------------------------------------\n"
               "THIS IS THE QUESTION POOL FOR THE NEXT QUESTION\n"
@@ -330,7 +336,9 @@ class TestCards:
         if chance >= total_option_percentage:
             keys_view = real_chance_list.keys()
             key_iterator = iter(keys_view)
-            for i in range(0, random.randint(0, len(question_pool) - 1)):
+            selected_key = ""
+            selected_random_key = random.randint(1, len(question_pool) - 1)
+            for i in range(0, selected_random_key):
                 selected_key = next(key_iterator)
             self.current_question = real_chance_list[selected_key]
             self.selected_questions[selected_key] += 1
@@ -348,11 +356,11 @@ class TestCards:
                 prev_kev_item += v
 
     @staticmethod
-    def do_operation(a , b, operation):
+    def do_operation(a, b, operation):
         if operation == ActionType.ADD:
-            return a+b
+            return a + b
         elif operation == ActionType.SUBTRACT:
-            return a-b
+            return a - b
         elif operation == ActionType.SET:
             return b
 
@@ -369,7 +377,6 @@ def main(ymlpath, jsonpath, test_cards):
 
     if test_cards:
         print("will pass through all the cards")
-
 
     nf = open(os.path.abspath(jsonpath + "\\output.json"), "w+")
     nf.write(json.dumps(json_data))
