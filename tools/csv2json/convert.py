@@ -188,11 +188,11 @@ result = {
             "min": 0,
             "max": 100,
             "min-action": [
-                "message No booze... Your milkshake chased everybody out the yard.",
+                "message @No booze... Your milkshake chased everybody out the yard.",
                 "game over"
             ],
             "max-action": [
-                "message Everyone's wasted man, that 27th shot was too much.",
+                "message @Everyone's wasted man, that 27th shot was too much.",
                 "game over"
             ]
         },
@@ -201,11 +201,11 @@ result = {
             "min": 0,
             "max": 100,
             "min-action": [
-                "message Snoop Lion rated the party  -4/20. You wear a bag over your face now.",
+                "message @Snoop Lion rated the party  -4/20. You wear a bag over your face now.",
                 "game over"
             ],
             "max-action": [
-                "message That last image literally broke the internet. You are literally the last meme.",
+                "message @That last image literally broke the internet. You are literally the last meme.",
                 "game over"
             ]
         },
@@ -214,11 +214,11 @@ result = {
             "min": 0,
             "max": 100,
             "min-action": [
-                "message BOOOOrrring. Straight up snoozefes bro. Just go to bed.",
+                "message @BOOOOrrring. Straight up snoozefes bro. Just go to bed.",
                 "game over"
             ],
             "max-action": [
-                "message This party is the bomb! Popo shutting the whole thing down.",
+                "message @This party is the bomb! Popo shutting the whole thing down.",
                 "game over"
             ]
         },
