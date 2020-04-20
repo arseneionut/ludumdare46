@@ -4,6 +4,8 @@ var QuestionEngine = load("res://scenes/question_engine.gd")
 var engine
 var card
 var buildings
+var people
+var turn_counter
 
 func _ready():
 #	var i = 1
@@ -33,6 +35,9 @@ func _on_card_game_over():
 
 func _on_card_new_card():
 	buildings.new_card()
+	turn_counter += 1
+	people += turn_counter * 5
+	$party_viewer/people.set_count(people)
 	play_new_card()
 
 func _on_card_button_press():
@@ -40,6 +45,9 @@ func _on_card_button_press():
 
 func initialize_engine():
 	buildings.new_game()
+	people = 5
+	turn_counter = 1
+	$party_viewer/people.set_count(people)
 	$sounds/pause_timer.start()
 	var content = Utils.read_content("res://resources/question.tres")
 	var jsonResult = JSON.parse(content)

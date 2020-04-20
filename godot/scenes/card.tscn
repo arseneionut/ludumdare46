@@ -14,10 +14,10 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="lbl_character_name" type="Label" parent="."]
-margin_left = 34.0
-margin_top = 49.0
-margin_right = 245.0
-margin_bottom = 147.0
+margin_left = 19.2672
+margin_top = 39.1781
+margin_right = 218.267
+margin_bottom = 137.178
 custom_fonts/font = ExtResource( 5 )
 text = "CHARACTER"
 align = 1
@@ -41,7 +41,7 @@ __meta__ = {
 }
 
 [node name="character" type="Sprite" parent="."]
-position = Vector2( 259.053, 0 )
+position = Vector2( 224.053, 0 )
 texture = ExtResource( 2 )
 centered = false
 
