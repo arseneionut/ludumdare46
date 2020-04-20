@@ -6,6 +6,8 @@ var counter
 var count_down_level
 var state = PLAYING
 
+onready var explosion_scene = preload("res://scenes/explosion.tscn")
+
 func _ready():
 	counter = 1
 	state = PLAYING
@@ -46,3 +48,10 @@ func _on_game_over_timer_timeout():
 		return
 	show_level(count_down_level)
 
+func _on_timer_timeout():
+	var idx = Utils.rng.randi_range(1, 5)
+	var pos = get_node("effects/explosions/pos_%d" % idx)
+	var explosion = explosion_scene.instance()
+	explosion.position = pos.position
+	add_child(explosion)
+	$effects/explosions/timer.wait_time = Utils.rng.randi_range(10, 25)
