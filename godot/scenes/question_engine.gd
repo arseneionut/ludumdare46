@@ -253,6 +253,8 @@ func _choose_next_question():
 
 func _run_action(action, actions):
 	action = action.strip_edges()
+	if action == "message":
+		return
 	if action.find("message ") == 0:
 		_current_messages.append(action.trim_prefix("message "))
 	elif action.find("add ") == 0:
